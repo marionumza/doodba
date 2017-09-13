@@ -56,8 +56,11 @@ Flake8 on private addons:
 Install and test private addons:
   script:
     - PRIVATE_ADDONS="$(ls -1 odoo/custom/src/private | tr -s '\n' ,)"
-    - docker-compose run --rm odoo --stop-after-init -i $PRIVATE_ADDONS
-    - docker-compose run --rm odoo unittest $PRIVATE_ADDONS
+    - test -n "$PRIVATE_ADDONS" || echo No private addons found
+    - test -z "$PRIVATE_ADDONS" ||
+      docker-compose run --rm odoo --stop-after-init -i $PRIVATE_ADDONS
+    - test -z "$PRIVATE_ADDONS" ||
+      docker-compose run --rm odoo unittest $PRIVATE_ADDONS
 
 # Runbot
 Boot runbot:
