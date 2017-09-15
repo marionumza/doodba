@@ -18,8 +18,10 @@ Pull and build images on private addons:
 Pylint for main branches on private addons:
   variables:
     CFG: travis_run_pylint.cfg
-  script:
-    - &pylint
+  script: &pylint
+    - PRIVATE_ADDONS="$(ls -1 odoo/custom/src/private | tr -s '\n' ,)"
+    - test -n "$PRIVATE_ADDONS" || echo No private addons found
+    - test -z "$PRIVATE_ADDONS" ||
       docker-compose run --rm --user root -e LOG_LEVEL=WARNING odoo bash -c "
         git clone --depth 1 $MQT_REPO $MQT_PATH &&
         pip install -q --no-cache pylint-odoo &&
@@ -32,8 +34,7 @@ Pylint for main branches on private addons:
 Pylint for merge requests on private addons:
   variables:
     CFG: travis_run_pylint_pr.cfg
-  script:
-    - *pylint
+  script: *pylint
   except:
     - *main_branches
 
@@ -41,8 +42,7 @@ Pylint beta on private addons:
   allow_failure: true
   variables:
     CFG: travis_run_pylint_beta.cfg
-  script:
-    - *pylint
+  script: *pylint
 
 Flake8 on private addons:
   script:
