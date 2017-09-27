@@ -1,6 +1,8 @@
 variables:
   COMPOSE_FILE: test.yaml
   COMPOSE_PROJECT_NAME: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
+  # HACK https://github.com/docker/compose/issues/4688 for parallel jobs
+  CONTAINER_NAME: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG-$CI_JOB_ID
   MQT_PATH: /tmp/maintainer-quality-tools
   MQT_REPO: https://github.com/OCA/maintainer-quality-tools.git
   REVIEW_DOMAIN: ci.gitlab.tecnativa.com
@@ -22,7 +24,8 @@ Pylint for main branches on private addons:
     - PRIVATE_ADDONS="$(ls -1 odoo/custom/src/private | tr -s '\n' ,)"
     - test -n "$PRIVATE_ADDONS" || echo No private addons found
     - test -z "$PRIVATE_ADDONS" ||
-      docker-compose run --rm --user root -e LOG_LEVEL=WARNING odoo bash -c "
+      docker-compose run --rm --user root --name "$CONTAINER_NAME"
+      -e LOG_LEVEL=WARNING odoo bash -c "
         git clone --depth 1 $MQT_REPO $MQT_PATH &&
         pip install -q --no-cache pylint-odoo &&
         pylint --load-plugins pylint_odoo -d C8101
@@ -46,7 +49,8 @@ Pylint beta on private addons:
 
 Flake8 on private addons:
   script:
-    - docker-compose run --rm --user root -e LOG_LEVEL=WARNING odoo bash -c "
+    - docker-compose run --rm --user root --name "$CONTAINER_NAME"
+      -e LOG_LEVEL=WARNING odoo bash -c "
         git clone --depth 1 $MQT_REPO $MQT_PATH &&
         pip install -q --no-cache flake8 &&
         cd custom/src/private &&
