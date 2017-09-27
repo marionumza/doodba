@@ -15,6 +15,7 @@ Pull and build images on private addons:
     - docker-compose down -v --remove-orphans
     - docker-compose build --pull
     - docker-compose pull
+    - docker-compose run --rm odoo --version
 
 # Lint
 Pylint for main branches on private addons:
@@ -24,10 +25,10 @@ Pylint for main branches on private addons:
     - PRIVATE_ADDONS="$(ls -1 odoo/custom/src/private | tr -s '\n' ,)"
     - test -n "$PRIVATE_ADDONS" || echo No private addons found
     - test -z "$PRIVATE_ADDONS" ||
-      docker-compose run --rm --user root --name "$CONTAINER_NAME"
+      docker-compose run --rm --no-deps --name "$CONTAINER_NAME"
       -e LOG_LEVEL=WARNING odoo bash -c "
         git clone --depth 1 $MQT_REPO $MQT_PATH &&
-        pip install -q --no-cache pylint-odoo &&
+        pip install --user -q pylint-odoo &&
         pylint --load-plugins pylint_odoo -d C8101
           --rcfile $MQT_PATH/travis/cfg/$CFG
           custom/src/private/*"
@@ -49,10 +50,10 @@ Pylint beta on private addons:
 
 Flake8 on private addons:
   script:
-    - docker-compose run --rm --user root --name "$CONTAINER_NAME"
+    - docker-compose run --rm --no-deps --user root --name "$CONTAINER_NAME"
       -e LOG_LEVEL=WARNING odoo bash -c "
         git clone --depth 1 $MQT_REPO $MQT_PATH &&
-        pip install -q --no-cache flake8 &&
+        pip install -q flake8 &&
         cd custom/src/private &&
         $MQT_PATH/travis/test_flake8"
 
@@ -62,9 +63,17 @@ Install and test private addons:
     - PRIVATE_ADDONS="$(ls -1 odoo/custom/src/private | tr -s '\n' ,)"
     - test -n "$PRIVATE_ADDONS" || echo No private addons found
     - test -z "$PRIVATE_ADDONS" ||
-      docker-compose run --rm odoo --stop-after-init -i $PRIVATE_ADDONS
-    - test -z "$PRIVATE_ADDONS" ||
-      docker-compose run --rm odoo unittest $PRIVATE_ADDONS
+      docker-compose run --rm -w /home/odoo
+      odoo bash -c "
+        odoo --stop-after-init -i $PRIVATE_ADDONS &&
+        pip install --user -q coverage &&
+        coverage run
+          --source /opt/odoo/custom/src/private/
+          --omit '*/__openerp__.py,*/__manifest__.py'
+          \$(realpath \$(which odoo)) --stop-after-init --test-enable
+          -u $PRIVATE_ADDONS &&
+        coverage report --skip-covered"
+  coverage: /TOTAL.* (\d+)%/
 
 # Runbot
 Boot runbot:
