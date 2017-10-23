@@ -65,6 +65,8 @@ Install and test private addons:
     - test -z "$PRIVATE_ADDONS" ||
       docker-compose run --rm -w /home/odoo
       odoo bash -c "
+        ([ \"\$ODOO_VERSION\" != 8.0 ] ||
+         psql postgres -c \"CREATE DATABASE \$PGDATABASE\") &&
         odoo --stop-after-init -i $PRIVATE_ADDONS &&
         pip install --user -q coverage &&
         coverage run
