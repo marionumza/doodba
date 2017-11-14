@@ -15,4 +15,5 @@ docker-compose.yml
 **.orig
 
 # Editor garbage folders
-.vscode
+.vscode/*
+!.vscode/*.json

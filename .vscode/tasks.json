@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "tasks": [
+        {
+            "taskName": "up",
+            "command": "docker-compose",
+            "args": ["up", "-d"],
+            "isShellCommand": true,
+            "isBackground": true
+        },
+        {
+            "taskName": "build",
+            "command": "docker-compose",
+            "args": ["build", "--pull"],
+            "isShellCommand": true
+        },
+        {
+            "taskName": "restart",
+            "command": "docker-compose",
+            "args": ["restart", "-t0", "odoo"],
+            "isShellCommand": true
+        },
+        {
+            "taskName": "pull",
+            "command": "docker-compose",
+            "args": ["pull"],
+            "isShellCommand": true
+        },
+        {
+            "taskName": "run ptvsd",
+            "command": "docker-compose",
+            "args": [
+                "run", "--rm", "--name", "odoo-ptvsd",
+                "-p", "127.0.0.1:10069:8069", "-p", "127.0.0.1:6899:6899",
+                "odoo", "bash", "-c",
+                "python -m ptvsd -s my_secret -p 6899 $(realpath $(which odoo)) - --workers 0 --dev all"
+            ],
+            "isShellCommand": true
+        },
+        {
+            "taskName": "stop ptvsd",
+            "command": "docker",
+            "args": [
+                "container",
+                "rm",
+                "-f",
+                "odoo-ptvsd"
+            ],
+            "isShellCommand": true,
+            "isBackground": true
+        }
+    ]
+}
