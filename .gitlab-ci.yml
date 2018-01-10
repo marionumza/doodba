@@ -4,11 +4,25 @@ variables:
   REVIEW_DOMAIN: ci.gitlab.tecnativa.com
   REVIEW_PORT: 81
 
+stages:
+  - build
+  - install
+  - test
+  - deploy
+
 # Build
 Pull and build images:
   stage: build
   script:
     - build
+
+# Install
+Install addons:
+  stage: install
+  variables:
+    ADDON_CATEGORIES: "--private --extra"
+  script:
+    - addons-install
 
 # Lint
 Pylint loose:
@@ -46,8 +60,6 @@ Flake8:
 Install and test addons:
   variables:
     ADDON_CATEGORIES: "--private --extra"
-  before_script:
-    - addons-install
   script:
     - coverage
   coverage: /TOTAL.* (\d+)%/
