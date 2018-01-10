@@ -57,7 +57,7 @@ Flake8:
     - flake8
 
 # Automated tests
-Install and test addons:
+Test addons:
   variables:
     ADDON_CATEGORIES: "--private --extra"
   script:
