@@ -5,26 +5,49 @@ variables:
   REVIEW_PORT: 81
 
 # Build
-Pull and build images on private addons:
+Pull and build images:
   stage: build
   script:
     - build
 
 # Lint
-Pylint:
+Pylint loose:
   variables:
-    ADDON_CATEGORIES: "--private"
-  script:
+    LINT_MODE: "loose"
+  script: &pylint
     - pylint
+  only: &main_branches
+    - ^\d+\.\d+$
+
+Pylint strict: &pylint_strict
+  variables:
+    LINT_MODE: "strict"
+  script: *pylint
+  except: *main_branches
+
+Pylint strict warnings:
+  <<: *pylint_strict
+  allow_failure: true
+  except: []
+  only: *main_branches
+
+Pylint beta warnings:
+  allow_failure: true
+  variables:
+    LINT_MODE: "beta"
+  script: *pylint
+  except: *main_branches
 
 Flake8:
-  variables:
-    ADDON_CATEGORIES: "--private"
   script:
     - flake8
 
 # Automated tests
-Install and test private addons:
+Install and test addons:
+  variables:
+    ADDON_CATEGORIES: "--private --extra"
+  before_script:
+    - addons-install
   script:
     - coverage
   coverage: /TOTAL.* (\d+)%/
