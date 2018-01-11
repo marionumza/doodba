@@ -25,31 +25,31 @@ Install addons:
     - addons-install
 
 # Lint
-Pylint loose:
+Pylint loose: &pylint
   variables:
     LINT_MODE: "loose"
-  script: &pylint
+  script:
     - pylint
-  only: &main_branches
-    - ^\d+\.\d+$
 
-Pylint strict: &pylint_strict
+Pylint strict:
+  <<: *pylint
   variables:
     LINT_MODE: "strict"
-  script: *pylint
-  except: *main_branches
+  except: &main_branches
+    - ^\d+\.\d+$
 
 Pylint strict warnings:
-  <<: *pylint_strict
+  <<: *pylint
   allow_failure: true
-  except: []
+  variables:
+    LINT_MODE: "strict"
   only: *main_branches
 
 Pylint beta warnings:
+  <<: *pylint
   allow_failure: true
   variables:
     LINT_MODE: "beta"
-  script: *pylint
   except: *main_branches
 
 Flake8:
