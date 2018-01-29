@@ -42,12 +42,6 @@ services:
             service: db
         restart: unless-stopped
 
-    inbox:
-        extends:
-            file: common.yaml
-            service: inboxfake
-        restart: unless-stopped
-
     smtp:
         extends:
             file: common.yaml
@@ -65,6 +59,7 @@ services:
 
 networks:
     default:
+        internal: true
         driver_opts:
             encrypted: 1
 
