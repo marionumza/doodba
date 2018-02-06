@@ -61,8 +61,10 @@ Test addons:
     ADDON_CATEGORIES: >
       --extra
       --private
+      --without base_location
       --without base_location_geonames_import
       --without currency_rate_update
+      --without l10n_es
       --without l10n_es_partner
       --without l10n_es_toponyms
   script:
