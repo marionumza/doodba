@@ -61,6 +61,7 @@ Test addons:
     ADDON_CATEGORIES: >
       --extra
       --private
+      --without base_bank_from_iban
       --without base_location
       --without base_location_geonames_import
       --without currency_rate_update
