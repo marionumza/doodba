@@ -72,7 +72,7 @@ Test addons:
       --without l10n_es_toponyms
   script:
     - coverage
-    - mv artifacts/coverage .
+    - mv artifacts/coverage . || true
   artifacts:
     paths:
       - coverage
