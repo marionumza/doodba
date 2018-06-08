@@ -1,6 +1,7 @@
 variables:
   COMPOSE_FILE: test.yaml
   COMPOSE_PROJECT_NAME: $CI_PROJECT_PATH_SLUG-$CI_PIPELINE_ID
+  QA_VOLUME: qa-$CI_PIPELINE_ID
   REVIEW_DOMAIN: ci.gitlab.tecnativa.com
   REVIEW_PORT: 81
 
@@ -71,6 +72,11 @@ Test addons:
       --without l10n_es_toponyms
   script:
     - coverage
+    - mv artifacts/coverage .
+  artifacts:
+    paths:
+      - coverage
+    when: always
   coverage: /TOTAL.* (\d+)%/
 
 # Free resources if something failed
