@@ -3,7 +3,6 @@ variables:
   COMPOSE_PROJECT_NAME: $CI_PROJECT_PATH_SLUG-$CI_PIPELINE_ID
   QA_VOLUME: qa-$CI_PIPELINE_ID
   REVIEW_DOMAIN: ci.gitlab.tecnativa.com
-  REVIEW_PORT: 81
 
 stages:
   - build
@@ -101,7 +100,7 @@ Boot runbot:
     name: review $CI_COMMIT_REF_NAME
     # TODO Reuse $DOMAIN_TEST instead
     # HACK https://gitlab.com/gitlab-org/gitlab-runner/issues/2487
-    url: http://$CI_ENVIRONMENT_SLUG.$REVIEW_DOMAIN:$REVIEW_PORT
+    url: https://$CI_ENVIRONMENT_SLUG.$REVIEW_DOMAIN
     on_stop: Destroy runbot
   script:
     - docker-compose up -d
