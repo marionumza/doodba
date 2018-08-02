@@ -26,6 +26,14 @@ Closed PRs:
   script:
     - closed-prs
 
+Force rebuild and update registry images now:
+  stage: build
+  only:
+    - /^\d+\.\d+$/
+  script:
+    - build
+    - docker-compose push
+
 # Install
 Install addons:
   stage: install
