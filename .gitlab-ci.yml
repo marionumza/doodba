@@ -28,6 +28,7 @@ Closed PRs:
 
 Force rebuild and update registry images now:
   stage: build
+  when: manual
   only:
     - /^\d+\.\d+$/
   script:
