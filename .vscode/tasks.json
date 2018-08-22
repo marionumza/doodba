@@ -11,6 +11,13 @@
             "isBackground": true
         },
         {
+            "taskName": "update git code",
+            "command": "docker-compose",
+            "args": ["-f", "setup-devel.yaml", "run", "--rm", "odoo"],
+            "isShellCommand": true,
+            "isBackground": false
+        },
+        {
             "taskName": "build",
             "command": "docker-compose",
             "args": ["build", "--pull"],
