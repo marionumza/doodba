@@ -12,10 +12,11 @@
         },
         {
             "taskName": "update git code",
-            "command": "docker-compose",
-            "args": ["-f", "setup-devel.yaml", "run", "--rm", "odoo"],
-            "isShellCommand": true,
-            "isBackground": false
+            "command": "fish",
+            "args": [
+                "-c",
+                "set -x UID (id -u $USER); set -x GID (id -g $USER); set -x UMASK (umask); docker-compose -f setup-devel.yaml run --rm odoo",
+            ],
         },
         {
             "taskName": "build",
