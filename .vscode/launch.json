@@ -5,10 +5,13 @@
             "name": "Attach to running container",
             "type": "python",
             "request": "attach",
-            "localRoot": "${workspaceRoot}/odoo",
-            "remoteRoot": "/opt/odoo",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceRoot}/odoo",
+                    "remoteRoot": "/opt/odoo"
+                }
+            ],
             "port": 6899,
-            "secret": "my_secret",
             "host": "localhost"
         }
     ]

@@ -37,27 +37,16 @@
             "isShellCommand": true
         },
         {
-            "taskName": "run ptvsd",
+            "taskName": "up with ptvsd",
             "command": "docker-compose",
-            "args": [
-                "run", "--rm", "--name", "odoo-ptvsd",
-                "-p", "127.0.0.1:10069:8069", "-p", "127.0.0.1:6899:6899",
-                "odoo", "bash", "-c",
-                "python -m ptvsd -s my_secret -p 6899 $(realpath $(which odoo)) - --workers 0 --dev all"
-            ],
+            "options": {
+                "env": {
+                    "DOODBA_PTVSD_ENABLE": "1"
+                }
+            },
+            "args": ["up", "-d"],
+            "isBackground": true,
             "isShellCommand": true
-        },
-        {
-            "taskName": "stop ptvsd",
-            "command": "docker",
-            "args": [
-                "container",
-                "rm",
-                "-f",
-                "odoo-ptvsd"
-            ],
-            "isShellCommand": true,
-            "isBackground": true
         }
     ]
 }
