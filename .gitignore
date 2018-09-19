@@ -20,3 +20,7 @@ docker-compose.yml
 
 # Project-specific docker configurations
 .docker
+
+# Project-specific postgres client certs
+db/client.cert.pem
+db/client.key.pem
