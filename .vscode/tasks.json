@@ -1,52 +1,123 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "0.1.0",
+    "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "up",
-            "command": "docker-compose",
-            "args": ["up", "-d"],
-            "isShellCommand": true,
-            "isBackground": true
-        },
-        {
-            "taskName": "update git code",
-            "command": "fish",
+            "label": "Set up VSCode development environment",
+            "type": "process",
+            "command": "python3",
             "args": [
-                "-c",
-                "set -x UID (id -u $USER); set -x GID (id -g $USER); set -x UMASK (umask); docker-compose -f setup-devel.yaml run --rm odoo",
+                ".vscode/doodbasetup.py"
             ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false
+            },
         },
         {
-            "taskName": "build",
+            "label": "Update git code",
+            "type": "shell",
             "command": "docker-compose",
-            "args": ["build", "--pull"],
-            "isShellCommand": true
+            "args": [
+                "--file=setup-devel.yaml",
+                "run",
+                "--rm",
+                {
+                    "value": "-eUID=$UID",
+                    "quoting": "weak"
+                },
+                {
+                    "value": "-eGID=$(id -g $USER)",
+                    "quoting": "weak"
+                },
+                {
+                    "value": "-eUMASK=$(umask)",
+                    "quoting": "weak"
+                },
+                "odoo"
+            ],
+            "options": {
+                "shell": {
+                    "executable": "sh",
+                    "args": [
+                        "-c"
+                    ]
+                },
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false
+            },
         },
         {
-            "taskName": "restart",
+            "label": "Pull images",
+            "type": "process",
             "command": "docker-compose",
-            "args": ["restart", "-t0", "odoo"],
-            "isShellCommand": true
+            "args": [
+                "pull"
+            ],
+            "group": "build",
+            "problemMatcher": [],
         },
         {
-            "taskName": "pull",
+            "label": "Build images",
+            "type": "process",
             "command": "docker-compose",
-            "args": ["pull"],
-            "isShellCommand": true
+            "args": [
+                "build",
+                "--pull"
+            ],
+            "group": "build",
+            "problemMatcher": [],
         },
         {
-            "taskName": "up with ptvsd",
+            "label": "Start project",
+            "type": "process",
             "command": "docker-compose",
+            "args": [
+                "up",
+                "-d"
+            ],
+            "isBackground": true,
+            "problemMatcher": [],
+        },
+        {
+            "label": "Start project in debug mode",
+            "type": "process",
+            "command": "docker-compose",
+            "args": [
+                "up",
+                "-d"
+            ],
             "options": {
                 "env": {
                     "DOODBA_PTVSD_ENABLE": "1"
                 }
             },
-            "args": ["up", "-d"],
             "isBackground": true,
-            "isShellCommand": true
-        }
-    ]
+            "problemMatcher": [],
+        },
+        {
+            "label": "Restart Odoo containers",
+            "type": "process",
+            "command": "docker-compose",
+            "args": [
+                "restart",
+                "-t0",
+                "odoo",
+                "odoo_proxy"
+            ],
+            "problemMatcher": [],
+        },
+    ],
 }
