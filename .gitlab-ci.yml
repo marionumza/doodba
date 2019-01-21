@@ -1,4 +1,4 @@
-include: https://raw.githubusercontent.com/Tecnativa/doodba-qa/master/examples/.gitlab-ci.yml
-
-variables:
-  REVIEW_DOMAIN: ci.gitlab.tecnativa.com
+include:
+  - remote: https://raw.githubusercontent.com/Tecnativa/doodba-qa/master/examples/.gitlab-ci.yml
+  - project: Tecnativa/ci-templates
+    file: /doodba/main.yml
