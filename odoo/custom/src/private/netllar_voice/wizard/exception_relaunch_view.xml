@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_exception_relaunch" model="ir.ui.view">
+            <field name="name">Relaunch CDR import exceptions wizard</field>
+            <field name="model">sale.telecommunications.import.exception.relaunch</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Relaunch exceptions?">
+                    <label colspan="4" string="Do you want to re-import import exceptions?"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="relaunch_exception" string="Re-import" type="object" icon="terp-gtk-go-back-rtl"/>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_exception_relaunch"
+            multi="True"
+            key2="client_action_multi" name="Re-import lines"
+            res_model="sale.telecommunications.import.exception.relaunch"
+            src_model="sale.telecommunications.import.exception"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</openerp>

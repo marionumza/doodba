@@ -1,0 +1,240 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* netllar_franchise_invoicing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-04 11:22+0000\n"
+"PO-Revision-Date: 2014-06-04 13:25+0100\n"
+"Last-Translator: Pedro Manuel Baeza <pedro.baeza@serviciosbaeza.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:183
+msgid "Cancelled Invoice"
+msgstr "Factura cancelada"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+msgid "Select franchises to invoice:"
+msgstr "Seleccione franquicia/s a facturar:"
+
+#. module: netllar_franchise_invoicing
+#: view:account.invoice:0
+msgid "Franchise CDR lines"
+msgstr "Líneas CDR de franquicia"
+
+#. module: netllar_franchise_invoicing
+#: model:ir.model,name:netllar_franchise_invoicing.model_account_invoice_franchise_line
+msgid "account.invoice.franchise_line"
+msgstr "account.invoice.franchise_line"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:187
+msgid "Supplier Invoice"
+msgstr "Factura de proveedor"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:223
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+#: model:ir.actions.act_window,name:netllar_franchise_invoicing.invoice_franchise_action
+#: model:ir.ui.menu,name:netllar_franchise_invoicing.menu_invoice_franchise
+msgid "Invoice franchises"
+msgstr "Facturar franquicias"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:225
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:179
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:259
+msgid "Taxes:"
+msgstr "Impuestos:"
+
+#. module: netllar_franchise_invoicing
+#: model:ir.model,name:netllar_franchise_invoicing.model_account_telecommunications_invoice_franchises
+msgid "account.telecommunications.invoice_franchises"
+msgstr "account.telecommunications.invoice_franchises"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:221
+msgid "Description"
+msgstr "Descripción"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:196
+msgid "Invoice Date"
+msgstr "Fecha factura"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:280
+msgid "Base"
+msgstr "Base"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+msgid "Select date interval to invoice to franchises"
+msgstr "Seleccione intervalo de fechas para facturar a las franquicias"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+msgid "Make invoices"
+msgstr "Realizar facturas"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:268
+msgid "Total:"
+msgstr "Total:"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:181
+msgid "Draft Invoice"
+msgstr "Factura borrador"
+
+#. module: netllar_franchise_invoicing
+#: model:ir.ui.menu,name:netllar_franchise_invoicing.menu_account_voice
+msgid "Voice"
+msgstr "Voz"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:189
+msgid "Refund"
+msgstr "Factura rectificativa"
+
+#. module: netllar_franchise_invoicing
+#: sql_constraint:account.invoice:0
+msgid "Invoice Number must be unique per Company!"
+msgstr "¡El número de factura debe ser único por compañía!"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+msgid "REMARK: There is no control on which elements are already invoiced."
+msgstr "AVISO: No existe control sobre qué elementos se han facturado ya."
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:281
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:185
+#: model:ir.model,name:netllar_franchise_invoicing.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: netllar_franchise_invoicing
+#: view:account.telecommunications.invoice_franchises:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:191
+msgid "Supplier Refund"
+msgstr "Factura rectificativa de proveedor"
+
+#. module: netllar_franchise_invoicing
+#: selection:account.invoice.franchise_line,line_type:0
+#, python-format
+msgid "Data"
+msgstr "Datos"
+
+#. module: netllar_franchise_invoicing
+#: selection:account.invoice.franchise_line,line_type:0
+#, python-format
+msgid "Call"
+msgstr "Llamada"
+
+#. module: netllar_franchise_invoicing
+#: selection:account.invoice.franchise_line,line_type:0
+#, python-format
+msgid "MMS"
+msgstr "MMS"
+
+#. module: netllar_franchise_invoicing
+#: selection:account.invoice.franchise_line,line_type:0
+#, python-format
+msgid "SMS"
+msgstr "SMS"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:365
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:425
+msgid "call"
+msgstr "Llamada"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:365
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:425
+msgid "sms"
+msgstr "SMS"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:365
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:425
+msgid "mms"
+msgstr "MMS"
+
+#. module: netllar_franchise_invoicing
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:365
+#: report:addons/netllar_franchise_invoicing/report/account_invoice.mako:425
+msgid "data"
+msgstr "Datos"
+
+#. module: netllar_franchise_invoicing
+#: field:account.telecommunications.invoice_franchises,journal_id:0
+msgid "Journal"
+msgstr "Diario"
+
+#. module: netllar_franchise_invoicing
+#: field:account.telecommunications.invoice_franchises,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: netllar_franchise_invoicing
+#: field:account.telecommunications.invoice_franchises,date_from:0
+msgid "Date from"
+msgstr "Desde fecha"
+
+#. module: netllar_franchise_invoicing
+#: field:account.telecommunications.invoice_franchises,date_to:0
+msgid "Date to"
+msgstr "Hasta fecha"
+
+#. module: netllar_franchise_invoicing
+#: field:account.telecommunications.invoice_franchises,company_ids:0
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: netllar_franchise_invoicing
+#: help:account.telecommunications.invoice_franchises,journal_id:0
+msgid "Journal where invoices are going to be created"
+msgstr "Diario en el que se van a crear las facturas"
+
+#. module: netllar_franchise_invoicing
+#: help:account.telecommunications.invoice_franchises,product_id:0
+msgid "Product to use in invoices"
+msgstr "Producto a usar en las facturas"
+
+#. module: netllar_franchise_invoicing
+#: code:addons/netllar_franchise_invoicing/wizard/invoice_franchises.py:169
+#: code:addons/netllar_franchise_invoicing/wizard/invoice_franchises.py:182
+#, python-format
+msgid "Period: from %s to %s"
+msgstr "Periodo: de %s a %s"

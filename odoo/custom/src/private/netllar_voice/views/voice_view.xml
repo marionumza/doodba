@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Views -->
+
+        <record id="view_sale_telecommunications_prefix_tree_editable" model="ir.ui.view">
+            <field name="name">sale.telecommunications.prefix.tree</field>
+            <field name="model">sale.telecommunications.prefix</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <tree string="Prefixes" editable="top">
+                    <field name="name"/>
+                    <field name="prefix"/>
+                    <field name="type"/>
+                    <field name="country_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_telecommunications_prefix__search" model="ir.ui.view">
+            <field name="name">sale.telecommunications.prefix.search</field>
+            <field name="model">sale.telecommunications.prefix</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search prefix">
+                    <group>
+                        <field name="name"/>
+                        <field name="prefix"/>
+                        <field name="country_id"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group by...">
+                        <filter string="Country" context="{'group_by': 'country_id'}" icon="terp-stock_effects-object-colorize"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_sale_telecommunications_prefix_group_tree" model="ir.ui.view">
+            <field name="name">sale.telecommunications.prefix_group.tree</field>
+            <field name="model">sale.telecommunications.prefix_group</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Prefixes groups">
+                    <field name="name"/>
+                    <field name="prefix_line"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_telecommunications_prefix_group_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.prefix_group.form</field>
+            <field name="model">sale.telecommunications.prefix_group</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Prefixes groups">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" class="oe_title"/>
+                    </h1>
+                    <field name="prefix_line" colspan="4"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Product -->
+        <record model="ir.ui.view" id="view_product_form_bond">
+            <field name="name">product.normal.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="standard_price" position="after">
+                    <field name="bond_id"/>
+                </field>
+            </field>
+        </record>
+
+
+        <!-- Windows actions -->
+
+        <record model="ir.actions.act_window" id="action_sale_telecommunications_prefix">
+            <field name="name">Prefixes</field>
+            <field name="res_model">sale.telecommunications.prefix</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sale_telecommunications_prefix_group">
+            <field name="name">Prefixes groups</field>
+            <field name="res_model">sale.telecommunications.prefix_group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Windows actions views -->
+
+        <record model="ir.actions.act_window.view" id="action_sale_telecommunications_prefix_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sale_telecommunications_prefix_tree_editable"/>
+            <field name="act_window_id" ref="action_sale_telecommunications_prefix"/>
+        </record>
+
+        <!-- Menu items -->
+
+        <menuitem id="menu_sale_telecommunications_voice_configuration"
+            name="Voice management"
+            parent="base.menu_base_config"
+            groups="group_sale_telecommunications"
+            sequence="1"/>
+
+        <menuitem id="menu_sale_telecommunications_voice"
+            name="Voice"
+            parent="menu_sale_telecommunications_voice_configuration"
+            sequence="0"/>
+
+        <menuitem name="Prefixes"
+            id="menu_sale_telecommunications_prefix"
+            parent="menu_sale_telecommunications_voice"
+            action="action_sale_telecommunications_prefix"
+            sequence="0"/>
+
+        <menuitem name="Prefixes groups"
+            id="menu_sale_telecommunications_prefix_group"
+            parent="menu_sale_telecommunications_voice"
+            action="action_sale_telecommunications_prefix_group"
+            sequence="1"/>
+
+    </data>
+</openerp>

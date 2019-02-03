@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- CLI view -->
+
+        <record id="view_sale_telecommunications_cli_tree_editable" model="ir.ui.view">
+            <field name="name">sale.telecommunications.cli.tree</field>
+            <field name="model">sale.telecommunications.cli</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <tree string="CLIs" editable="top">
+                    <field name="active"/>
+                    <field name="name"
+                            attrs="{'readonly': [('assigned', '=', True)]}"
+                            on_change="onchange_name(name, context)"/>
+                    <field name="type"/>
+                    <field name="assigned"/>
+                    <field name="contract_line_id"/>
+                    <button name="view_contract"
+                            string="View contract"
+                            type="object"
+                            icon="terp-gtk-go-back-rtl"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_telecommunications_cli_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.cli.form</field>
+            <field name="model">sale.telecommunications.cli</field>
+            <field name="type">form</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <form string="CLIs">
+                    <field name="name"/>
+                    <field name="assigned"/>
+                    <field name="type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="contract_line_id"/>
+                    <field name="active"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+                id="view_sale_telecommunications_cli_filter">
+            <field name="name">sale.telecommunications.cli.search</field>
+            <field name="model">sale.telecommunications.cli</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search CLI">
+                   <group>
+                       <filter name="unassigned" icon="terp-dolar_ok!" string="Unassigned" domain="[('assigned', '=', False)]"/>
+                   </group>
+                   <group>
+                       <field name="name"/>
+                   </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Windows actions -->
+
+        <record model="ir.actions.act_window" id="action_sale_telecommunications_cli">
+            <field name="name">CLIs</field>
+            <field name="res_model">sale.telecommunications.cli</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!-- Menu items -->
+
+        <menuitem name="CLIs"
+            id="menu_sale_telecommunications_cli"
+            parent="menu_sale_telecommunications_voice"
+            action="action_sale_telecommunications_cli"
+            sequence="3"/>
+
+    </data>
+</openerp>

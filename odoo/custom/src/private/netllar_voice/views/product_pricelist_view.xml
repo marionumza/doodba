@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_pricelist_version_tree_view_voice" model="ir.ui.view">
+            <field name="name">product.pricelist.version.tree.voice</field>
+            <field name="model">product.pricelist.version</field>
+            <field name="inherit_id" ref="product.product_pricelist_version_tree_view"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="date_end" position="after">
+                    <field name="category"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_pricelist_version_voice_form_view" model="ir.ui.view">
+            <field name="name">product.pricelist.version.voice.form</field>
+            <field name="model">product.pricelist.version</field>
+            <field name="inherit_id" ref="product.product_pricelist_version_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+                    <field name="category"/>
+                </field>
+                <field name="active" position="after">
+                    <field name="sms_def_price"/>
+                    <field name="mms_def_price"/>
+                    <field name="data_def_price"/>
+                    <field name="default_sale_rate"/>
+                </field>
+                <field name="items_id" position="replace">
+                    <notebook colspan="4">
+                        <page string="Price List Items">
+                            <field name="items_id" colspan="4" nolabel="1" widget="one2many_list"/>
+                        </page>
+                        <page string="Voice items (land)" groups="netllar_voice.group_sale_telecommunications">
+                            <field name="voice_line" colspan="4" nolabel="1" widget="one2many_list">
+                                <tree string="Voice lines" editable="top">
+                                    <field name="prefix_id"/>
+                                    <field name="group_id"/>
+                                    <field name="use_cost_price"/>
+                                    <field name="sale_rate"
+                                           attrs="{'readonly': [('use_cost_price', '=', False)]}"
+                                    />
+                                    <field name="price"
+                                           attrs="{'readonly': [('use_cost_price', '=', True)]}"/>
+                                    <field name="call_setup_price"
+                                           attrs="{'readonly': [('use_cost_price', '=', True)]}"/>
+                                </tree>
+                             </field>
+                        </page>
+                        <page string="Voice items (mobile)" groups="netllar_voice.group_sale_telecommunications">
+                            <field name="mobile_line" colspan="4" nolabel="1" widget="one2many_list">
+                                <tree string="Voice lines" editable="top">
+                                    <field name="line_type"/>
+                                    <field name="prefix_id"/>
+                                    <field name="group_id"/>
+                                    <field name="use_cost_price"/>
+                                    <field name="sale_rate"
+                                           attrs="{'readonly': [('use_cost_price', '=', False)]}"
+                                    />
+                                    <field name="price"
+                                           attrs="{'readonly': [('use_cost_price', '=', True)]}"/>
+                                    <field name="call_setup_price"
+                                           attrs="{'readonly': [('use_cost_price', '=', True)]}"/>
+                                </tree>
+                             </field>
+                        </page>
+                    </notebook>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_pricelist_item_tree_view_bond" model="ir.ui.view">
+            <field name="name">product.pricelist.item.tree.bond</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_tree_view"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="base" position="after">
+                    <field name="no_bonds"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_pricelist_item_form_view_bond" model="ir.ui.view">
+            <field name="name">product.pricelist.item.form.bond</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="base" position="before">
+                    <!-- TODO: Cambiar a multi-valor (category_ids) -->
+                    <field name="no_bonds"
+                           attrs="{'invisible': [('product_id', '=', False), ('categ_id', '=', False)]}"/>
+                    <newline/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

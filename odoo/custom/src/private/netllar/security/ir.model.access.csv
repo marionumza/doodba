@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_telecommunications_contract,sale.telecommunications.contract,model_sale_telecommunications_contract,base.group_sale_salesman,1,1,1,1
+access_sale_telecommunications_contract_line,sale.telecommunications.contract.line,model_sale_telecommunications_contract_line,base.group_sale_salesman,1,1,1,1
+access_sale_telecommunications_contract_invoice,sale.telecommunications.contract.invoice,model_sale_telecommunications_contract_invoice,base.group_sale_salesman,1,1,1,1
+access_sale_telecommunications_contract_renewal,sale.telecommunications.contract.renewal,model_sale_telecommunications_contract_renewal,base.group_sale_salesman,1,1,1,1
+

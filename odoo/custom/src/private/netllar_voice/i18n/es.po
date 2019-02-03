@@ -1,0 +1,1481 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* netllar_voice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-05 16:11+0000\n"
+"PO-Revision-Date: 2017-07-05 16:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cli,active:0
+msgid "Active"
+msgstr "Activo"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,comment:0
+#: field:sale.telecommunications.cdr.line.report,comment:0
+#: field:sale.telecommunications.import.exception,comment:0
+msgid "Additional comments"
+msgstr "Comentarios adicionales"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_filter
+msgid "Agrupar por..."
+msgstr "Agrupar por..."
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "AireNet CSV (SMS)"
+msgstr "AireNet CSV (SMS)"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "AireNet CSV (data)"
+msgstr "AireNet CSV (datos)"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "AireNet CSV (voice)"
+msgstr "AireNet CSV (voz)"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.bond.rule,disc_type:0
+#: field:sale.telecommunications.cdr.line,length:0
+#: field:sale.telecommunications.cdr.line.report,length:0
+#: selection:sale.telecommunications.contract.line.rule,disc_type:0
+#: field:sale.telecommunications.import.exception,length:0
+#: selection:sale.telecommunications.rule,disc_type:0
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.cdr.line,length:0
+#: help:sale.telecommunications.import.exception,length:0
+msgid "Amount of the event (seconds for calls, KB for data and number for messages"
+msgstr "Cantidad del evento (segundos para llamadas, KB para datos y número para los mensajes)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,apply_to:0
+#: field:sale.telecommunications.contract.line.rule,apply_to:0
+#: field:sale.telecommunications.rule,apply_to:0
+msgid "Apply to"
+msgstr "Aplicar a"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,apply_to_subtype:0
+#: field:sale.telecommunications.contract.line.rule,apply_to_subtype:0
+#: field:sale.telecommunications.rule,apply_to_subtype:0
+msgid "Apply to subtype"
+msgstr "Aplicar a subtipo"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_cdr_cdr
+msgid "Archivos CDR"
+msgstr "Archivos CDR"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.contract.line,cli_id:0
+msgid "Associated CLI"
+msgstr "CLI asociado"
+
+#. module: netllar_voice
+#: field:product.product,bond_id:0
+msgid "Associated bond"
+msgstr "Bono asociado"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "Asterisk CSV"
+msgstr "Asterisk CSV"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_source:0
+msgid "Asterisk HTTP"
+msgstr "Asterisk HTTP"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.contract.line,bond_id:0
+msgid "Bond"
+msgstr "Bono"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.bond:netllar_voice.view_sale_telecommunications_bond_form
+msgid "Bond lines"
+msgstr "Líneas de bono"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,bond_id:0
+msgid "Bond reference"
+msgstr "Referencia al bono"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_bond
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_bonds
+#: view:sale.telecommunications.bond:netllar_voice.view_sale_telecommunications_bond_tree
+msgid "Bonds"
+msgstr "Bonos"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_filter
+msgid "Buscar CDRs"
+msgstr "Buscar CDRs"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_cdr
+msgid "CDR"
+msgstr "CDR"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.sale_telecommunications_cdr_line_action
+#: model:ir.ui.menu,name:netllar_voice.sale_telecommunications_cdr_line_menuitem
+msgid "CDR Line Analysis"
+msgstr "Análisis de líneas CDR"
+
+#. module: netllar_voice
+#: field:account.invoice,cdr_line:0
+msgid "CDR Lines"
+msgstr "Líneas del CDR"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr_import/import_voice.py:204
+#, python-format
+msgid "CDR already exists."
+msgstr "El CDR ya existe."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.wizard.import_manual,input_file:0
+msgid "CDR file"
+msgstr "Archivo CDR"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_import_exceptions
+msgid "CDR import exceptions"
+msgstr "Excepciones de importación CDR"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_import_profiles
+msgid "CDR import profiles"
+msgstr "Perfiles de importación de CDR"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,cdr_ids:0
+msgid "CDR imports"
+msgstr "Importación CDR"
+
+#. module: netllar_voice
+#: view:account.invoice:netllar_voice.invoice_voice_form
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_cdr_lines
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_form
+#: field:sale.telecommunications.cdr,line_ids:0
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_tree
+msgid "CDR lines"
+msgstr "Líneas del CDR"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_tree
+msgid "CDR lines report"
+msgstr "Informe de líneas CDR"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line.report,cdr_name:0
+msgid "CDR name"
+msgstr "Nombre CDR"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,cdr_id:0
+#: field:sale.telecommunications.import.exception,cdr_id:0
+msgid "CDR reference"
+msgstr "Referencia al CDR"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+msgid "CLI"
+msgstr "CLI"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.exception,type:0
+msgid "CLI not assigned"
+msgstr "CLI no asignado"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cli,name:0
+msgid "CLI number"
+msgstr "Número CLI"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_cli
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_cli
+#: view:sale.telecommunications.cli:netllar_voice.view_sale_telecommunications_cli_form
+#: view:sale.telecommunications.cli:netllar_voice.view_sale_telecommunications_cli_tree_editable
+msgid "CLIs"
+msgstr "CLIs"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.bond.rule:netllar_voice.view_bond_rule_form
+#: view:sale.telecommunications.contract.line.rule:netllar_voice.view_contract_line_rule_form
+msgid "Calculation data"
+msgstr "Datos de cálculo"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_bond_rule
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_contract_line_rule
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_rule
+#: view:sale.telecommunications.bond.rule:netllar_voice.view_bond_rule_form
+#: view:sale.telecommunications.contract.line.rule:netllar_voice.view_contract_line_rule_form
+msgid "Calculation rule"
+msgstr "Regla de cálculo"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.bond.rule:netllar_voice.view_bond_rule_tree
+#: view:sale.telecommunications.contract.line.rule:netllar_voice.view_contract_line_rule_tree
+msgid "Calculation rules"
+msgstr "Reglas de cálculo"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_type:0
+msgid "Call"
+msgstr "Llamada"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_cdr
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_cdr
+msgid "Call Detail Record (CDR)"
+msgstr "Registro de detalle de llamadas (CDR - Call Detail Record)"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_import_exceptions
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_import_exception
+msgid "Call Detail Record (CDR) import exceptions"
+msgstr "Excepciones de importación del Registro detallado de llamadas (CDR)"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_import_profiles
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_import_profile
+msgid "Call Detail Record (CDR) import profiles"
+msgstr "Perfiles de importación del Registro detallado de llamada (CDR)"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_cdr_line
+msgid "Call Detail Record (CDR) line"
+msgstr "Línea del registro detallado de llamadas (CDR)"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_sale_telecommunications_cdr_line_report
+msgid "Call Detail Record (CDR) line Report"
+msgstr "Informe de líneas de registro detallado de llamadas (CDR)"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_cdr_line
+msgid "Call Detail Record (CDR) lines"
+msgstr "Líneas de registro detallado de llamadas (CDR)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,date:0
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+#: field:sale.telecommunications.cdr.line.report,date:0
+#: field:sale.telecommunications.import.exception,date:0
+msgid "Call date"
+msgstr "Fecha llamada"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,call_setup_price:0
+#: field:product.pricelist.mobile_line,call_setup_price:0
+msgid "Call setup price"
+msgstr "Precio de establecimiento de llamada"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.wizard.import_manual:netllar_voice.cdr_manual_import_view
+#: view:sale.telecommunications.import.exception.relaunch:netllar_voice.view_exception_relaunch
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "Carrier Enabler CSV"
+msgstr "Carrier Enabler CSV"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.cdr,import_type:0
+#: help:sale.telecommunications.import.profile,import_type:0
+msgid "Choose here the format in which data are served for this profile."
+msgstr "Escoja aquí el formato en el que los datos serán obtenidos para este perfil."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,import_source:0
+msgid "Choose here the source type of the data to import."
+msgstr "Escoja aquí el tipo de fuente para los datos a importar."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr.py:130
+#: code:addons/netllar_voice/models/cdr_import/import_exception.py:119
+#, python-format
+msgid "Combination not unique (%s)."
+msgstr "Combinación no única (%s)."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+#: field:sale.telecommunications.cdr.line,company_id:0
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+#: field:sale.telecommunications.cdr.line.report,company_id:0
+#: field:sale.telecommunications.cli,company_id:0
+#: field:sale.telecommunications.import.exception,company_id:0
+#: field:sale.telecommunications.import.profile,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr.py:148
+#, python-format
+msgid "Company not provided auto-creating the CLI"
+msgstr "No se ha informado de la compañía auto-creando el CLI"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cli,contract_line_id:0
+msgid "Contract line associated"
+msgstr "Línea de contrato asociada"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.contract.line.rule,contract_line_id:0
+msgid "Contract line reference"
+msgstr "Referencia a la línea de contrato"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,cost:0
+#: field:sale.telecommunications.cdr.line.report,cost:0
+#: field:sale.telecommunications.import.exception,cost:0
+msgid "Cost price"
+msgstr "Precio de coste"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.prefix:netllar_voice.view_sale_telecommunications_prefix__search
+msgid "Country"
+msgstr "País"
+
+#. module: netllar_voice
+#: field:product.pricelist.mobile_line,create_uid:0
+#: field:product.pricelist.voice_line,create_uid:0
+#: field:sale.telecommunications.bond,create_uid:0
+#: field:sale.telecommunications.bond.line,create_uid:0
+#: field:sale.telecommunications.bond.rule,create_uid:0
+#: field:sale.telecommunications.cdr,create_uid:0
+#: field:sale.telecommunications.cdr.line,create_uid:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,create_uid:0
+#: field:sale.telecommunications.cli,create_uid:0
+#: field:sale.telecommunications.contract.line.rule,create_uid:0
+#: field:sale.telecommunications.import.exception,create_uid:0
+#: field:sale.telecommunications.import.exception.relaunch,create_uid:0
+#: field:sale.telecommunications.import.profile,create_uid:0
+#: field:sale.telecommunications.prefix,create_uid:0
+#: field:sale.telecommunications.prefix_group,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: netllar_voice
+#: field:product.pricelist.mobile_line,create_date:0
+#: field:product.pricelist.voice_line,create_date:0
+#: field:sale.telecommunications.bond,create_date:0
+#: field:sale.telecommunications.bond.line,create_date:0
+#: field:sale.telecommunications.bond.rule,create_date:0
+#: field:sale.telecommunications.cdr,create_date:0
+#: field:sale.telecommunications.cdr.line,create_date:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,create_date:0
+#: field:sale.telecommunications.cli,create_date:0
+#: field:sale.telecommunications.contract.line.rule,create_date:0
+#: field:sale.telecommunications.import.exception,create_date:0
+#: field:sale.telecommunications.import.exception.relaunch,create_date:0
+#: field:sale.telecommunications.import.profile,create_date:0
+#: field:sale.telecommunications.prefix,create_date:0
+#: field:sale.telecommunications.prefix_group,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_period:0
+msgid "Daily"
+msgstr "Diariamente"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_type:0
+msgid "Data"
+msgstr "Datos"
+
+#. module: netllar_voice
+#: field:product.pricelist.version,data_def_price:0
+msgid "Data (MB) default price"
+msgstr "Precio defecto datos (MB)"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+msgid "Date"
+msgstr "Fecha"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.contract.line.rule,start_date:0
+msgid "Date to start applying the rule. Keep empty for no checking."
+msgstr "Fecha en la que empezar a aplicar la regla. Dejar vacío para no hacer ningún control."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.contract.line.rule,end_date:0
+msgid "Date up to the rule is been applied. Keep empty for no checking."
+msgstr "Fecha hasta la que la regla se aplica. Dejar vacío para ningún control."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,import_day:0
+msgid "Day of month"
+msgstr "Día del mes"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,import_day:0
+msgid "Day of month for the import"
+msgstr "Día del mes para la importación"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,days_validity:0
+msgid "Days of validity"
+msgstr "Días de validez"
+
+#. module: netllar_voice
+#: help:product.pricelist.version,data_def_price:0
+msgid "Default price for each MB data traffic."
+msgstr "Precio por defecto para cada MB de tráfico de datos."
+
+#. module: netllar_voice
+#: help:product.pricelist.version,mms_def_price:0
+msgid "Default price for each MMS."
+msgstr "Precio por defecto para cada MMS."
+
+#. module: netllar_voice
+#: help:product.pricelist.version,sms_def_price:0
+msgid "Default price for each SMS."
+msgstr "Precio por defecto para cada SMS."
+
+#. module: netllar_voice
+#: help:product.pricelist.version,default_sale_rate:0
+msgid "Default rate for applying to cost rate when selling items for this pricelist that doesn't have specific rate and for roaming ones."
+msgstr "Ratio por defecto a aplicar al coste cuando se vendan elementos de esta tarifa que no tienen ratios específicos y para los que sean de roaming."
+
+#. module: netllar_voice
+#: field:product.pricelist.version,default_sale_rate:0
+msgid "Default sale rate"
+msgstr "Ratio de venta por defecto"
+
+#. module: netllar_voice
+#: help:product.product,bond_id:0
+#: help:sale.telecommunications.contract.line,bond_id:0
+msgid "Defines if there is a bond associated to this product. If set, contract lines with this product will need a CLI."
+msgstr "Define si hay un bono asociado a este producto. Si está establecido, las líneas de contrato con este producto requerirán un CLI."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,dest:0
+#: field:sale.telecommunications.cdr.line.report,dest:0
+#: field:sale.telecommunications.import.exception,dest:0
+msgid "Destination number"
+msgstr "Número destino"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,dest_id:0
+#: field:sale.telecommunications.cdr.line.report,dest_id:0
+#: field:sale.telecommunications.import.exception,dest_id:0
+msgid "Destination prefix"
+msgstr "Prefijo destino"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,percentage:0
+#: field:sale.telecommunications.contract.line.rule,percentage:0
+#: field:sale.telecommunications.rule,percentage:0
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,amount:0
+#: field:sale.telecommunications.contract.line.rule,amount:0
+#: field:sale.telecommunications.rule,amount:0
+msgid "Discount (amount)"
+msgstr "Descuento (cantidad)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,price:0
+#: field:sale.telecommunications.contract.line.rule,price:0
+#: field:sale.telecommunications.rule,price:0
+msgid "Discount (price)"
+msgstr "Descuento (precio)"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,amount:0
+#: help:sale.telecommunications.contract.line.rule,amount:0
+#: help:sale.telecommunications.rule,amount:0
+msgid "Discount for each consume line in amount. You can put a negative value for an increment."
+msgstr "Descuento para cada línea de consumo en cantidad. Puede poner un valor negativo para aplicar un incremento."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,price:0
+#: help:sale.telecommunications.contract.line.rule,price:0
+#: help:sale.telecommunications.rule,price:0
+msgid "Discount in price for each consume line. You can put a negative value for an increment."
+msgstr "Descuento en precio para cada línea de consumo. Puede poner un valor negativo para aplicar un incremento."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,percentage:0
+#: help:sale.telecommunications.contract.line.rule,percentage:0
+#: help:sale.telecommunications.rule,percentage:0
+msgid "Discount to be applied in percentage. You can put a negative amount for an increment."
+msgstr "Descuento a aplicarse en porcentaje. Puede poner una cantidad negativa para aplicar un incremento."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,disc_type:0
+#: field:sale.telecommunications.contract.line.rule,disc_type:0
+#: field:sale.telecommunications.rule,disc_type:0
+msgid "Discount type"
+msgstr "Tipo de descuento"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,display_name:0
+#: field:product.pricelist.mobile_line,display_name:0
+#: field:product.pricelist.voice_line,display_name:0
+#: field:sale.telecommunications.bond,display_name:0
+#: field:sale.telecommunications.bond.line,display_name:0
+#: field:sale.telecommunications.bond.rule,display_name:0
+#: field:sale.telecommunications.cdr,display_name:0
+#: field:sale.telecommunications.cdr.line,display_name:0
+#: field:sale.telecommunications.cdr.line.report,display_name:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,display_name:0
+#: field:sale.telecommunications.cli,display_name:0
+#: field:sale.telecommunications.contract.line.rule,display_name:0
+#: field:sale.telecommunications.import.exception,display_name:0
+#: field:sale.telecommunications.import.exception.relaunch,display_name:0
+#: field:sale.telecommunications.import.profile,display_name:0
+#: field:sale.telecommunications.prefix,display_name:0
+#: field:sale.telecommunications.prefix_group,display_name:0
+#: field:sale.telecommunications.rule,display_name:0
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.exception.relaunch:netllar_voice.view_exception_relaunch
+msgid "Do you want to re-import import exceptions?"
+msgstr "¿Quiere re-importar las excepciones de importación?"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_subtype:0
+msgid "Domestic"
+msgstr "Nacional"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_subtype:0
+msgid "EU"
+msgstr "UE"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/product_pricelist.py:136
+#, python-format
+msgid "Either a prefix or a prefix group must be filled."
+msgstr "Se debe introducir un prefijo o un grupo de prefijos."
+
+#. module: netllar_voice
+#: constraint:sale.telecommunications.contract.line:0
+msgid "El CLI ya está seleccionado en otra línea para el periodo establecido."
+msgstr "El CLI ya está seleccionado en otra línea para el periodo establecido."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.contract.line.rule,end_date:0
+msgid "End date"
+msgstr "Fecha final"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,sequence:0
+#: help:sale.telecommunications.contract.line.rule,sequence:0
+#: help:sale.telecommunications.rule,sequence:0
+msgid "Evaluation of the rule priority. Lower value means that the rule is evaluated first."
+msgstr "Evaluación de la prioridad de la regla. Un valor más bajo significa que la regla es evaluada primero."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:280
+#, python-format
+msgid "Exceeded MMS"
+msgstr "MMS no incluidos en bono"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:277
+#, python-format
+msgid "Exceeded SMS"
+msgstr "SMS no incluidos en bono"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:283
+#, python-format
+msgid "Exceeded data"
+msgstr "Datos no incluidos en bono"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond,mms_exceeded_product_id:0
+msgid "Exceeded product (MMS)"
+msgstr "Producto para sobretarificación (MMS)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond,sms_exceeded_product_id:0
+msgid "Exceeded product (SMS)"
+msgstr "Producto para sobretarificación (SMS)"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond,data_exceeded_product_id:0
+msgid "Exceeded product (data)"
+msgstr "Producto para sobretarificación (datos)"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:274
+#, python-format
+msgid "Exceeded seconds"
+msgstr "Llamadas no incluidas en bono"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr,exception_ids:0
+msgid "Exception lines"
+msgstr "Líneas de excepción"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.exception,type:0
+msgid "Exception type"
+msgstr "Tipo de excepción"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_source:0
+msgid "FTP/SFTP"
+msgstr "FTP/SFTP"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_filter
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.wizard.import_manual,file_name:0
+msgid "File name"
+msgstr "Nombre de archivo"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_files:0
+msgid "File pattern"
+msgstr "Patrón de archivos"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,ftp_files:0
+msgid "File pattern of the files to import. Use wildcards (*) to match any substring. Leave empty for importing any found file."
+msgstr "Patrón de archivos a importar. Use comodines (*) para casar cualquier subcadena. Déjelo vacío para importar cualquier archivo encontrado."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+#: view:sale.telecommunications.prefix:netllar_voice.view_sale_telecommunications_prefix__search
+msgid "Group by..."
+msgstr "Agrupar por..."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_form
+msgid "History"
+msgstr "Historial"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,asterisk_host:0
+#: field:sale.telecommunications.import.profile,ftp_host:0
+msgid "Host"
+msgstr "Host"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,id:0
+#: field:product.pricelist.mobile_line,id:0
+#: field:product.pricelist.voice_line,id:0
+#: field:sale.telecommunications.bond,id:0
+#: field:sale.telecommunications.bond.line,id:0
+#: field:sale.telecommunications.bond.rule,id:0
+#: field:sale.telecommunications.cdr,id:0
+#: field:sale.telecommunications.cdr.line,id:0
+#: field:sale.telecommunications.cdr.line.report,id:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,id:0
+#: field:sale.telecommunications.cli,id:0
+#: field:sale.telecommunications.contract.line.rule,id:0
+#: field:sale.telecommunications.import.exception,id:0
+#: field:sale.telecommunications.import.exception.relaunch,id:0
+#: field:sale.telecommunications.import.profile,id:0
+#: field:sale.telecommunications.prefix,id:0
+#: field:sale.telecommunications.prefix_group,id:0
+#: field:sale.telecommunications.rule,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,ftp_host:0
+msgid "IP or domain name of the host of the FTP"
+msgstr "IP o nombre de dominio del servidor FTP"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,asterisk_host:0
+msgid "IP or domain name of the host where Asterisk PBX is accesible. It mustn't include URI scheme (http://) or path (/listado/index.php)"
+msgstr "La dirección IP o el nombre de dominio del host en el que la centralita Asterisk es accesible. No debe incluir el esquema (http://) o la ruta (/listado/index.php)"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.cdr_manual_import_action
+#: model:ir.ui.menu,name:netllar_voice.cdr_manual_import_menu
+#: view:sale.telecommunications.cdr.wizard.import_manual:netllar_voice.cdr_manual_import_view
+msgid "Import CDR file"
+msgstr "Importar archivo CDR"
+
+#. module: netllar_voice
+#: model:ir.actions.server,name:netllar_voice.action_profile_import_cdr
+msgid "Import CDRs for the profile"
+msgstr "Importar CDRs para este perfil"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr,date:0
+#: field:sale.telecommunications.cdr.line.report,import_date:0
+msgid "Import date"
+msgstr "Fecha de importación"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.exception:netllar_voice.view_sale_telecommunications_import_exception_tree
+msgid "Import exceptions"
+msgstr "Excepciones de importación"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.wizard.import_manual:netllar_voice.cdr_manual_import_view
+msgid "Import file"
+msgstr "Importar archivo"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_form
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_tree
+msgid "Import profiles"
+msgstr "Perfiles de importación"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_http_form
+msgid "Importación inicial"
+msgstr "Importación inicial"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,initial_date:0
+msgid "Initial date"
+msgstr "Fecha inicial"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,invoice_id:0
+#: field:sale.telecommunications.cdr.line.report,invoice_id:0
+msgid "Invoice reference"
+msgstr "Referencia a la factura"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cli,assigned:0
+msgid "Is assigned?"
+msgstr "¿Está asignado?"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,__last_update:0
+#: field:product.pricelist.mobile_line,__last_update:0
+#: field:product.pricelist.voice_line,__last_update:0
+#: field:sale.telecommunications.bond,__last_update:0
+#: field:sale.telecommunications.bond.line,__last_update:0
+#: field:sale.telecommunications.bond.rule,__last_update:0
+#: field:sale.telecommunications.cdr,__last_update:0
+#: field:sale.telecommunications.cdr.line,__last_update:0
+#: field:sale.telecommunications.cdr.line.report,__last_update:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,__last_update:0
+#: field:sale.telecommunications.cli,__last_update:0
+#: field:sale.telecommunications.contract.line.rule,__last_update:0
+#: field:sale.telecommunications.import.exception,__last_update:0
+#: field:sale.telecommunications.import.exception.relaunch,__last_update:0
+#: field:sale.telecommunications.import.profile,__last_update:0
+#: field:sale.telecommunications.prefix,__last_update:0
+#: field:sale.telecommunications.prefix_group,__last_update:0
+#: field:sale.telecommunications.rule,__last_update:0
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: netllar_voice
+#: field:product.pricelist.mobile_line,write_uid:0
+#: field:product.pricelist.voice_line,write_uid:0
+#: field:sale.telecommunications.bond,write_uid:0
+#: field:sale.telecommunications.bond.line,write_uid:0
+#: field:sale.telecommunications.bond.rule,write_uid:0
+#: field:sale.telecommunications.cdr,write_uid:0
+#: field:sale.telecommunications.cdr.line,write_uid:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,write_uid:0
+#: field:sale.telecommunications.cli,write_uid:0
+#: field:sale.telecommunications.contract.line.rule,write_uid:0
+#: field:sale.telecommunications.import.exception,write_uid:0
+#: field:sale.telecommunications.import.exception.relaunch,write_uid:0
+#: field:sale.telecommunications.import.profile,write_uid:0
+#: field:sale.telecommunications.prefix,write_uid:0
+#: field:sale.telecommunications.prefix_group,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: netllar_voice
+#: field:product.pricelist.mobile_line,write_date:0
+#: field:product.pricelist.voice_line,write_date:0
+#: field:sale.telecommunications.bond,write_date:0
+#: field:sale.telecommunications.bond.line,write_date:0
+#: field:sale.telecommunications.bond.rule,write_date:0
+#: field:sale.telecommunications.cdr,write_date:0
+#: field:sale.telecommunications.cdr.line,write_date:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,write_date:0
+#: field:sale.telecommunications.cli,write_date:0
+#: field:sale.telecommunications.contract.line.rule,write_date:0
+#: field:sale.telecommunications.import.exception,write_date:0
+#: field:sale.telecommunications.import.exception.relaunch,write_date:0
+#: field:sale.telecommunications.import.profile,write_date:0
+#: field:sale.telecommunications.prefix,write_date:0
+#: field:sale.telecommunications.prefix_group,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_type:0
+msgid "MMS"
+msgstr "MMS"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_source:0
+msgid "Manual"
+msgstr "Manual"
+
+#. module: netllar_voice
+#: help:product.pricelist.generic_voice_line,use_cost_price:0
+#: help:product.pricelist.mobile_line,use_cost_price:0
+#: help:product.pricelist.voice_line,use_cost_price:0
+msgid "Mark this field if you want to base the sale price in the cost price (with the multiplier factor introduced in the code)."
+msgstr "Marque esta casilla si quiere basar el precio de venta en el precio de coste (con el factor multiplicador que está establecido en el código)."
+
+#. module: netllar_voice
+#: help:product.pricelist.item,no_bonds:0
+msgid "Marque esta casilla si no desea usar los minutos/duración máximos establecidos en el bono"
+msgstr "Marque esta casilla si no desea usar los minutos/duración máximos establecidos en el bono"
+
+#. module: netllar_voice
+#: field:product.pricelist.version,mms_def_price:0
+msgid "Mms def price"
+msgstr "Mms def price"
+
+#. module: netllar_voice
+#: field:product.pricelist.version,mobile_line:0
+msgid "Mobile lines"
+msgstr "Líneas móviles"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.bond.rule,type:0
+#: selection:sale.telecommunications.contract.line.rule,type:0
+#: selection:sale.telecommunications.rule,type:0
+msgid "Modification of the base"
+msgstr "Modificación de la base"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.bond.rule,type:0
+#: selection:sale.telecommunications.contract.line.rule,type:0
+#: selection:sale.telecommunications.rule,type:0
+msgid "Modification of the price"
+msgstr "Modificación del precio"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_period:0
+msgid "Monthly"
+msgstr "Mensualmente"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.profile,import_type:0
+msgid "MásMóvil CSV"
+msgstr "MásMóvil CSV"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr,name:0
+#: field:sale.telecommunications.import.profile,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,name:0
+msgid "Name of the importer."
+msgstr "Nombre del importador."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,name:0
+#: help:sale.telecommunications.contract.line.rule,name:0
+#: help:sale.telecommunications.rule,name:0
+msgid "Name to identify the rule. This is the text that it's going to be added to the invoice line where applies."
+msgstr "Nombre para identificar a la regla. Éste es el texto que será añadido a la línea de factura donde se aplique."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr_import/parsers/parser.py:96
+#, python-format
+msgid "No buffer file given."
+msgstr "No se ha proporcionado un búfer de datos."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr_import/import_voice.py:217
+#, python-format
+msgid "No data has been fetched (due to an error or no events)."
+msgstr "No se han obtenido datos (debido a un error o a que no hay eventos)."
+
+#. module: netllar_voice
+#: field:product.pricelist.item,no_bonds:0
+msgid "No usar bonos"
+msgstr "No usar bonos"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr_import/import_voice.py:269
+#, python-format
+msgid "Nothing to do because the record has been deleted"
+msgstr "Nada que hacer porque el registro se ha eliminado"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.cli,name:0
+msgid "Number associated to a CLI."
+msgstr "Número asociado al CLI."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,days_validity:0
+msgid "Number of days that the rule is going to be applied since the beginning of the contract. Keep empty for an unlimited validity."
+msgstr "Número de días que la regla va a ser aplicada desde el comienzo de la línea del contrato. Dejar vacío para una validez ilimitada."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_form
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_ftp_form
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_http_form
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_password:0
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_path:0
+msgid "Path"
+msgstr "Ruta"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,ftp_path:0
+msgid "Path of the FTP server where getting files. If not set, path will be /."
+msgstr "Ruta del servidor FTP donde obtener los archivos. Si no está establecida, la ruta será la raíz."
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.bond.rule,disc_type:0
+#: selection:sale.telecommunications.contract.line.rule,disc_type:0
+#: selection:sale.telecommunications.rule,disc_type:0
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_filter
+msgid "Perfil"
+msgstr "Perfil"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:370
+#, python-format
+msgid "Period: from %s to %s"
+msgstr "Periodo: de %s a %s"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,import_period:0
+msgid "Periodicity"
+msgstr "Periodicidad"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_port:0
+msgid "Port"
+msgstr "Puerto"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,prefix_id:0
+#: field:product.pricelist.mobile_line,prefix_id:0
+#: field:sale.telecommunications.cdr.line,prefix:0
+#: field:sale.telecommunications.cdr.line.report,prefix:0
+#: field:sale.telecommunications.import.exception,prefix:0
+msgid "Prefix"
+msgstr "Prefijo"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,group_id:0
+#: field:product.pricelist.mobile_line,group_id:0
+#: field:product.pricelist.voice_line,group_id:0
+msgid "Prefix group"
+msgstr "Grupo de prefijos"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.bond.rule:netllar_voice.view_bond_rule_form
+#: view:sale.telecommunications.contract.line.rule:netllar_voice.view_contract_line_rule_form
+msgid "Prefix groups"
+msgstr "Grupos de prefijos"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,prefix_groups:0
+#: field:sale.telecommunications.contract.line.rule,prefix_groups:0
+msgid "Prefix groups to apply"
+msgstr "Grupos de prefijos a aplicar"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.exception,type:0
+msgid "Prefix not found"
+msgstr "Prefijo no encontrado"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_prefix
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_prefix
+#: view:sale.telecommunications.prefix:netllar_voice.view_sale_telecommunications_prefix_tree_editable
+msgid "Prefixes"
+msgstr "Prefijos"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_sale_telecommunications_prefix_group
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_prefix_group
+#: view:sale.telecommunications.bond:netllar_voice.view_sale_telecommunications_bond_form
+#: view:sale.telecommunications.prefix_group:netllar_voice.view_sale_telecommunications_prefix_group_form
+#: view:sale.telecommunications.prefix_group:netllar_voice.view_sale_telecommunications_prefix_group_tree
+msgid "Prefixes groups"
+msgstr "Grupos de prefijos"
+
+#. module: netllar_voice
+#: field:product.pricelist.mobile_line,price:0
+msgid "Price"
+msgstr "Precio"
+
+#. module: netllar_voice
+#: view:product.pricelist.version:netllar_voice.product_pricelist_version_voice_form_view
+msgid "Price List Items"
+msgstr "Elementos de la tarifa de precios"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:143
+#: code:addons/netllar_voice/models/contract.py:171
+#, python-format
+msgid "Price for the prefix '%s' (%s) not found"
+msgstr "El precio para el prefijo '%s' (%s) no se ha encontrado"
+
+#. module: netllar_voice
+#: help:product.pricelist.mobile_line,price:0
+msgid "Price of a unit of the concept:\n"
+"· For calls, price of a minute.\n"
+"· For SMS/MMS, price of a message.\n"
+"· For data, price of a MB."
+msgstr "Precio de una unidad del concepto:\n"
+"· Para llamadas, precio de un minuto\n"
+"· Para SMS/MMS, precio de un mensaje.\n"
+"· Para datos, precio de un MB."
+
+#. module: netllar_voice
+#: help:product.pricelist.generic_voice_line,call_setup_price:0
+#: help:product.pricelist.mobile_line,call_setup_price:0
+msgid "Price of the call setup for this prefix. It can be 0."
+msgstr "Precio del establecimiento de llamada para este prefijo. Puede ser 0."
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_product_pricelist_version
+msgid "Pricelist Version"
+msgstr "Versión tarifa"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Elemento de la tarifa"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,version_id:0
+#: field:product.pricelist.mobile_line,version_id:0
+msgid "Pricelist version reference"
+msgstr "Referencia a la versión de tarifa"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,sequence:0
+#: field:sale.telecommunications.contract.line.rule,sequence:0
+#: field:sale.telecommunications.rule,sequence:0
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: netllar_voice
+#: field:product.pricelist.version,category:0
+msgid "Product category"
+msgstr "Categoría de producto"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond,mms_exceeded_product_id:0
+msgid "Product for invoicing exceeded MMS of the bond."
+msgstr "Producto para facturar el exceso de MMS del bono."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond,sms_exceeded_product_id:0
+msgid "Product for invoicing exceeded SMS of the bond."
+msgstr "Producto para facturar el exceso de SMS del bono."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond,data_exceeded_product_id:0
+msgid "Product for invoicing exceeded data of the bond."
+msgstr "Producto para facturar el exceso de datos del bono."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+#: field:sale.telecommunications.cdr.line,profile_id:0
+#: field:sale.telecommunications.cdr.line.report,profile_id:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,profile_id:0
+msgid "Profile"
+msgstr "Perfil"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr,profile_id:0
+msgid "Profile reference"
+msgstr "Referencia al perfil"
+
+#. module: netllar_voice
+#: model:ir.model,name:netllar_voice.model_queue_job
+msgid "Queue Job"
+msgstr "Trabajo de Cola"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.exception.relaunch:netllar_voice.view_exception_relaunch
+msgid "Re-import"
+msgstr "Re-importar"
+
+#. module: netllar_voice
+#: model:ir.actions.act_window,name:netllar_voice.action_exception_relaunch
+msgid "Re-import lines"
+msgstr "Re-importar líneas"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.exception.relaunch:netllar_voice.view_exception_relaunch
+msgid "Relaunch exceptions?"
+msgstr "¿Relanzar excepciones?"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.bond.rule,type:0
+#: selection:sale.telecommunications.contract.line.rule,type:0
+#: selection:sale.telecommunications.rule,type:0
+msgid "Remove call setup price"
+msgstr "Eliminar el precio de establecimiento"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_subtype:0
+msgid "Roaming"
+msgstr "Roaming"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond,rule_lines:0
+#: field:sale.telecommunications.contract.line,rule_lines:0
+msgid "Rule lines"
+msgstr "Líneas de reglas"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.rule,name:0
+#: field:sale.telecommunications.contract.line.rule,name:0
+#: field:sale.telecommunications.rule,name:0
+msgid "Rule name"
+msgstr "Nombre de la regla"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_sftp:0
+msgid "SFTP?"
+msgstr "¿SFTP?"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.cdr.line,line_type:0
+msgid "SMS"
+msgstr "SMS"
+
+#. module: netllar_voice
+#: field:product.pricelist.version,sms_def_price:0
+msgid "SMS default price"
+msgstr "Precio por defecto de los SMS"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,price:0
+#: field:sale.telecommunications.cdr.line.report,price:0
+msgid "Sale price"
+msgstr "Precio de venta"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,sale_rate:0
+#: field:product.pricelist.mobile_line,sale_rate:0
+#: field:product.pricelist.voice_line,sale_rate:0
+msgid "Sale rate"
+msgstr "Ratio de venta"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_filter
+msgid "Search CDR line"
+msgstr "Buscar línea CDR"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cli:netllar_voice.view_sale_telecommunications_cli_filter
+msgid "Search CLI"
+msgstr "Buscar CLI"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.prefix:netllar_voice.view_sale_telecommunications_prefix__search
+msgid "Search prefix"
+msgstr "Buscar prefijo"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.cdr.wizard.import_manual,profile_id:0
+msgid "Select the profile you want to attach this manual import to."
+msgstr "Seleccione el perfil al que quiere adjuntar esta importación manual."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr.line,caller_id:0
+#: field:sale.telecommunications.cdr.line.report,caller_id:0
+#: field:sale.telecommunications.import.exception,caller_id:0
+msgid "Source CLI"
+msgstr "CLI origen"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.exception,caller:0
+msgid "Source number"
+msgstr "Número origen"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,import_source:0
+msgid "Source of import"
+msgstr "Fuente de importación"
+
+#. module: netllar_voice
+#: help:product.pricelist.generic_voice_line,sale_rate:0
+#: help:product.pricelist.mobile_line,sale_rate:0
+#: help:product.pricelist.voice_line,sale_rate:0
+msgid "Specific sale rate to apply to the cost. If not specified, the rate applied is the general one at pricelist version level."
+msgstr "Ratio de venta específico a aplicar al coste. Si no se indica, el ratio aplicado es el general que hay a nivel de versión de tarifa."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,type:0
+#: help:sale.telecommunications.contract.line.rule,type:0
+#: help:sale.telecommunications.rule,type:0
+msgid "Specifies the calculation type for the rule.\n"
+"· Modification of the base: It modifies the base of the calculation in an amount or a percentage: the length for the calls or the quantity for data. It doesn't apply to SMS/MMS.· Modification of the price: It modifies the price of the consume line in an amount or a percentage.\n"
+"· Remove call setup price: It can be applied only to calls.\n"
+""
+msgstr "Especifica el tipo de cálculo para la regla.\n"
+"· Modificación de la base: Modifica la base de cálculo en una cantidad o un porcentaje: la duración para las llamadas o la cantidad para los datos. No se aplica a SMS/MMS.\n"
+"· Modificación del precio: Modifica el precio de la línea de consumo en una cantidad o porcentaje.\n"
+"· Eliminar el precio de establecimiento: Sólo se puede aplicar a las llamadas.\n"
+""
+
+#. module: netllar_voice
+#: help:sale.telecommunications.bond.rule,apply_to:0
+#: help:sale.telecommunications.contract.line.rule,apply_to:0
+#: help:sale.telecommunications.rule,apply_to:0
+msgid "Specifies to what type of consume lines this rule is going to be applied."
+msgstr "Especifica a qué tipo de consumo se va a aplicar esta regla."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.contract.line.rule,start_date:0
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.bond.line,line_subtype:0
+#: field:sale.telecommunications.cdr.line,line_subtype:0
+#: field:sale.telecommunications.import.exception,line_subtype:0
+msgid "Subtype"
+msgstr "Subtipo"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,partner_id:0
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: netllar_voice
+#: model:res.groups,name:netllar_voice.group_sale_telecommunications
+msgid "Telecommunications manager"
+msgstr "Responsable de telecomunicaciones"
+
+#. module: netllar_voice
+#: model:res.groups,comment:netllar_voice.group_sale_telecommunications
+msgid "The user will be sales management and will manage telecommunications objects (bonds, prefixes, and so on)."
+msgstr "El usuario será responsable de ventas y podrá gestionar los objetos de las telecomunicaciones (bonos, prefijos y demás)."
+
+#. module: netllar_voice
+#: help:sale.telecommunications.cdr.line,price:0
+msgid "This is the price at which the line is going to be sold. This will be 0 in two cases: a) It hasn't been calculated; b) The call is still inside the max minutes in the bond. WARNING: This field is calculated in the generation of the invoices process."
+msgstr "Éste es el precio al que la línea será vendida. Puede ser 0 en dos casos: a) No ha sido calculado aún; b) La llamada entrada dentro de los minutos máximos del bono. AVISO: Este campo es calculado en el proceso de generación de facturas."
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,tz:0
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr:netllar_voice.view_sale_telecommunications_cdr_filter
+msgid "Tipo de importación"
+msgstr "Tipo de importación"
+
+#. module: netllar_voice
+#: field:product.product,to_weight:0
+msgid "To Weigh With Scale"
+msgstr "To Weigh With Scale"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cdr.line:netllar_voice.view_sale_telecommunications_cdr_line_tree
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_tree
+msgid "Total length"
+msgstr "Duración total"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,line_type:0
+#: field:product.pricelist.mobile_line,line_type:0
+#: field:product.pricelist.voice_line,line_type:0
+#: field:sale.telecommunications.bond.line,line_type:0
+#: field:sale.telecommunications.bond.rule,type:0
+#: field:sale.telecommunications.cdr.line,line_type:0
+#: view:sale.telecommunications.cdr.line.report:netllar_voice.sale_telecommunications_cdr_line_report_view_search
+#: field:sale.telecommunications.cdr.line.report,line_type:0
+#: field:sale.telecommunications.contract.line.rule,type:0
+#: field:sale.telecommunications.import.exception,line_type:0
+#: field:sale.telecommunications.rule,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cli,type:0
+msgid "Type of CLI"
+msgstr "Tipo de CLI"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.cdr,import_type:0
+#: field:sale.telecommunications.cdr.line.report,import_type:0
+#: field:sale.telecommunications.cdr.wizard.import_manual,import_type:0
+#: field:sale.telecommunications.import.profile,import_type:0
+msgid "Type of import"
+msgstr "Tipo de importación"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cli:netllar_voice.view_sale_telecommunications_cli_filter
+msgid "Unassigned"
+msgstr "Sin asignar"
+
+#. module: netllar_voice
+#: selection:sale.telecommunications.import.exception,type:0
+msgid "Unknown CLI"
+msgstr "CLI desconocido"
+
+#. module: netllar_voice
+#: field:product.pricelist.generic_voice_line,use_cost_price:0
+#: field:product.pricelist.mobile_line,use_cost_price:0
+#: field:product.pricelist.voice_line,use_cost_price:0
+msgid "Use cost price"
+msgstr "Usar precio de coste"
+
+#. module: netllar_voice
+#: field:sale.telecommunications.import.profile,ftp_user:0
+msgid "User"
+msgstr "Usuario"
+
+#. module: netllar_voice
+#: help:sale.telecommunications.import.profile,ftp_user:0
+msgid "User to login in the FTP server. If not set, the connection will be anonymous."
+msgstr "Usuario para iniciar sesión en el servidor FTP. Si no está establecido, la conexión será anónima."
+
+#. module: netllar_voice
+#: view:sale.telecommunications.cli:netllar_voice.view_sale_telecommunications_cli_tree_editable
+msgid "View contract"
+msgstr "Ver contrato"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_voice
+msgid "Voice"
+msgstr "Voz"
+
+#. module: netllar_voice
+#: view:product.pricelist.version:netllar_voice.product_pricelist_version_voice_form_view
+msgid "Voice items (land)"
+msgstr "Elementos de voz (fijo)"
+
+#. module: netllar_voice
+#: view:product.pricelist.version:netllar_voice.product_pricelist_version_voice_form_view
+msgid "Voice items (mobile)"
+msgstr "Elementos de voz (móvil)"
+
+#. module: netllar_voice
+#: sql_constraint:product.pricelist.voice_line:0
+msgid "Voice line for prefix and version combination must be unique."
+msgstr "La combinación para la línea de voz de prefijo y versión debe ser única."
+
+#. module: netllar_voice
+#: sql_constraint:product.pricelist.mobile_line:0
+msgid "Voice line for prefix, version and line type combination must be unique."
+msgstr "La combinación para la línea de voz del prefijo, versión y tipo debe ser única."
+
+#. module: netllar_voice
+#: view:product.pricelist.version:netllar_voice.product_pricelist_version_voice_form_view
+msgid "Voice lines"
+msgstr "Líneas de precios de voz"
+
+#. module: netllar_voice
+#: model:ir.ui.menu,name:netllar_voice.menu_sale_telecommunications_voice_configuration
+msgid "Voice management"
+msgstr "Gestión de voz"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/product_pricelist.py:71
+#, python-format
+msgid "You cannot have 2 pricelist versions that overlap!"
+msgstr "No puede tener dos versiones de tarifa que se superpongan."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/rule.py:109
+#, python-format
+msgid "You cannot set 'Modification of the base' for SMS or MMS."
+msgstr "No puede establecer 'Modificación de la base' para SMS o MMS."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/rule.py:100
+#, python-format
+msgid "You cannot set 'No call setup' for applying to something different than calls."
+msgstr "No puede establecer 'Sin establecimiento de llamada' para aplicarlo a algo diferente de llamadas."
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/cdr_import/import_voice.py:200
+#, python-format
+msgid "You must provide a valid type to import a CDR file"
+msgstr "Debe proveer un tipo válido para importar un archivo CDR"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_form
+msgid "delete"
+msgstr "borrar"
+
+#. module: netllar_voice
+#: code:addons/netllar_voice/models/contract.py:298
+#, python-format
+msgid "from"
+msgstr "de"
+
+#. module: netllar_voice
+#: view:sale.telecommunications.import.profile:netllar_voice.view_import_profile_form
+msgid "¿Seguro que desea eliminar el CDR completo?"
+msgstr "¿Seguro que desea eliminar el CDR completo?"
+

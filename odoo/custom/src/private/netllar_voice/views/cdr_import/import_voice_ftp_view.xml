@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_import_profile_ftp_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.import.profile.ftp.form</field>
+            <field name="model">sale.telecommunications.import.profile</field>
+            <field name="inherit_id" ref="view_import_profile_form"/>
+            <field name="arch" type="xml">
+                <page string="Parameters" position="inside">
+                    <group attrs="{'invisible': [('import_source', '!=', 'ftp')]}">
+                        <field name="ftp_sftp"/>
+                        <newline/>
+                        <field name="ftp_host"
+                                attrs="{'required': [('import_source', '=', 'ftp')]}"/>
+                        <field name="ftp_port"
+                                attrs="{'required': [('import_source', '=', 'ftp')]}"/>
+                        <field name="ftp_user"/>
+                        <field name="ftp_password"
+                                password="True"
+                                attrs="{'required': [('ftp_user', '!=', False)]}"/>
+                        <field name="ftp_path"/>
+                        <field name="ftp_files"/>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

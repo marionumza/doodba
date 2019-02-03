@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="netllar_voice_cdr1" model="sale.telecommunications.cdr">
+            <field name="name">Demo CDR 1</field>
+            <field name="import_type">carrier_enabler_csv</field>
+            <field name="date"
+                   eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+        </record>
+
+        <record id="netllar_voice_mobile_prefix" model="sale.telecommunications.prefix">
+            <field name="name">Mobile</field>
+            <field name="prefix">6</field>
+            <field name="country_id" ref="base.es" />
+            <field name="type">mobile</field>
+        </record>
+
+        <record id="netllar_voice_land_prefix" model="sale.telecommunications.prefix">
+            <field name="name">Land</field>
+            <field name="prefix">9</field>
+            <field name="country_id" ref="base.es" />
+            <field name="type">land</field>
+        </record>
+
+        <record id="netllar_voice_special_prefix" model="sale.telecommunications.prefix">
+            <field name="name">Special</field>
+            <field name="prefix">900</field>
+            <field name="country_id" ref="base.es" />
+            <field name="type">special</field>
+        </record>
+
+        <record id="netllar_voice_cli1" model="sale.telecommunications.cli">
+            <field name="active" eval="True" />
+            <field name="name">123456879</field>
+            <field name="type">mobile</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+
+        <record id="netllar_voice_cli2" model="sale.telecommunications.cli">
+            <field name="active" eval="True" />
+            <field name="name">987654321</field>
+            <field name="type">land</field>
+            <field name="company_id" ref="base.main_company" />
+        </record>
+
+        <record id="netllar_voice_cdr1_line1" model="sale.telecommunications.cdr.line">
+            <field name="cdr_id" ref="netllar_voice_cdr1" />
+            <field name="caller_id" ref="netllar_voice_cli1" />
+            <field name="line_type">data</field>
+            <field name="prefix_id" ref="netllar_voice_mobile_prefix" />
+            <field name="date"
+                   eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')" />
+            <field name="length" eval="55" />
+            <field name="price" eval="15.0" />
+            <field name="cost" eval="10.0" />
+        </record>
+
+        <record id="netllar_voice_cdr1_line2" model="sale.telecommunications.cdr.line">
+            <field name="cdr_id" ref="netllar_voice_cdr1" />
+            <field name="caller_id" ref="netllar_voice_cli1" />
+            <field name="line_type">mms</field>
+            <field name="prefix_id" ref="netllar_voice_special_prefix" />
+            <field name="date"
+                   eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')" />
+            <field name="length" eval="1" />
+            <field name="price" eval="0.30" />
+            <field name="cost" eval="0.10" />
+        </record>
+
+        <record id="netllar_voice_cdr1_line3" model="sale.telecommunications.cdr.line">
+            <field name="cdr_id" ref="netllar_voice_cdr1" />
+            <field name="caller_id" ref="netllar_voice_cli1" />
+            <field name="line_type">sms</field>
+            <field name="prefix_id" ref="netllar_voice_mobile_prefix" />
+            <field name="date"
+                   eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')" />
+            <field name="length" eval="1" />
+            <field name="price" eval="0.15" />
+            <field name="cost" eval="0" />
+        </record>
+
+        <record id="netllar_voice_cdr1_line4" model="sale.telecommunications.cdr.line">
+            <field name="cdr_id" ref="netllar_voice_cdr1" />
+            <field name="caller_id" ref="netllar_voice_cli2" />
+            <field name="line_type">call</field>
+            <field name="prefix_id" ref="netllar_voice_land_prefix" />
+            <field name="date"
+                   eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')" />
+            <field name="length" eval="10" />
+            <field name="price" eval="0.20" />
+            <field name="cost" eval="0.10" />
+        </record>
+</odoo>

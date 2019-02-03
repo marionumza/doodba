@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Informe de factura -->
+        <record model="ir.actions.report.xml" id="account.account_invoices">
+            <field name="report_file">netllar_franchise_invoicing/report/account_invoice.mako</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_bond_rule_tree" model="ir.ui.view">
+            <field name="name">sale.telecommunications.bond.rule.tree</field>
+            <field name="model">sale.telecommunications.bond.rule</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Calculation rules">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="apply_to"/>
+                    <field name="apply_to_subtype"/>
+                    <field name="prefix_groups"/>
+                    <field name="type"/>
+                    <field name="days_validity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bond_rule_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.bond.rule.form</field>
+            <field name="model">sale.telecommunications.bond.rule</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Calculation rule">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="apply_to"/>
+                            <field name="apply_to_subtype"/>
+                            <field name="days_validity"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                    <group string="Prefix groups" colspan="4">
+                        <field name="prefix_groups" nolabel="1"/>
+                    </group>
+                    <group string="Calculation data"
+                           colspan="4"
+                           col="8"
+                           attrs="{'invisible': [('type', '=', 'no_call_setup')]}">
+                        <field name="disc_type"
+                               attrs="{'required': [('disc_type', '!=', 'no_call_setup')]}"/>
+                        <field name="percentage"
+                               attrs="{'invisible': [('disc_type', '!=', 'percentage')]}"/>
+                        <field name="price"
+                               attrs="{'invisible': ['|', ('disc_type', '!=', 'amount'), ('type', '!=', 'price')]}"/>
+                        <field name="amount"
+                               attrs="{'invisible': ['|', ('disc_type', '!=', 'amount'), ('type', '!=', 'base')]}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_contract_line_rule_tree" model="ir.ui.view">
+            <field name="name">sale.telecommunications.contract.line.rule.tree</field>
+            <field name="model">sale.telecommunications.contract.line.rule</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Calculation rules">
+                    <field name="name"/>
+                    <field name="apply_to"/>
+                    <field name="apply_to_subtype"/>
+                    <field name="prefix_groups"/>
+                    <field name="type"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_contract_line_rule_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.contract.line.rule.form</field>
+            <field name="model">sale.telecommunications.contract.line.rule</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Calculation rule">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="apply_to"/>
+                            <field name="apply_to_subtype"/>
+                            <field name="start_date"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="type"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <group string="Prefix groups" colspan="4">
+                        <field name="prefix_groups" nolabel="1"/>
+                    </group>
+                    <group string="Calculation data"
+                           colspan="4"
+                           col="8"
+                           attrs="{'invisible': [('type', '=', 'no_call_setup')]}">
+                        <field name="disc_type"
+                               attrs="{'required': [('disc_type', '!=', 'no_call_setup')]}"/>
+                        <field name="percentage"
+                               attrs="{'invisible': [('disc_type', '!=', 'percentage')]}"/>
+                        <field name="price"
+                               attrs="{'invisible': ['|', ('disc_type', '!=', 'amount'), ('type', '!=', 'price')]}"/>
+                        <field name="amount"
+                               attrs="{'invisible': ['|', ('disc_type', '!=', 'amount'), ('type', '!=', 'base')]}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

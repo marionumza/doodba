@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Views -->
+
+        <record id="view_import_profile_tree" model="ir.ui.view">
+            <field name="name">sale.telecommunications.import.profile.tree</field>
+            <field name="model">sale.telecommunications.import.profile</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Import profiles">
+                    <field name="name"/>
+                    <field name="import_type"/>
+                    <field name="import_source"/>
+                    <field name="partner_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_import_profile_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.import.profile.form</field>
+            <field name="model">sale.telecommunications.import.profile</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Import profiles">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" class="oe_title"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="import_type"/>
+                            <field name="tz"/>
+                        </group>
+                        <group>
+                            <field name="import_source"/>
+                            <field name="partner_id"
+                                   context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}"
+                                   options='{"quick_create": false}'
+                                   domain="[('supplier', '=', True)]"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Parameters">
+                            <group>
+                                <group>
+                                    <field name="import_period"/>
+                                </group>
+                                <group>
+                                    <field name="import_day"
+                                            attrs="{'readonly': [('import_period', '!=', 'month')], 'required': [('import_period', '=', 'month')]}"/>
+                                </group>
+                            </group>
+                            <newline/>
+                        </page>
+                        <page string="History">
+                            <field name="cdr_ids" colspan="4" nolabel="1">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="import_type"/>
+                                    <field name="name"/>
+                                    <field name="line_ids"/>
+                                    <field name="exception_ids"/>
+                                    <button name="button_unlink"
+                                            type="object"
+                                            string="delete"
+                                            confirm="¿Seguro que desea eliminar el CDR completo?"
+                                            options="{'reload_on_button': true}"
+                                            icon="gtk-cancel"
+                                    />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- Windows actions -->
+
+        <record model="ir.actions.act_window" id="action_sale_telecommunications_import_profiles">
+            <field name="name">Call Detail Record (CDR) import profiles</field>
+            <field name="res_model">sale.telecommunications.import.profile</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu items -->
+
+        <menuitem name="CDR import profiles"
+            id="menu_sale_telecommunications_import_profiles"
+            parent="menu_sale_telecommunications_cdr"
+            action="action_sale_telecommunications_import_profiles"
+            sequence="0"/>
+
+        <record model="ir.actions.server" id="action_profile_import_cdr">
+            <field name="name">Import CDRs for the profile</field>
+            <field name="model_id" ref="model_sale_telecommunications_import_profile"/>
+            <field name="state">code</field>
+            <field name="code">action = obj.manual_import_cdrs()</field>
+        </record>
+
+        <record model="ir.values" id="ir_value_profile_import_cdr">
+            <field name="key2">client_action_multi</field>
+            <field name="model">sale.telecommunications.import.profile</field>
+            <field name="name">Import CDRs</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_profile_import_cdr"/>
+        </record>
+
+    </data>
+</openerp>

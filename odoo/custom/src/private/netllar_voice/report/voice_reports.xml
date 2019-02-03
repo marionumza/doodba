@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Cabecera -->
+
+        <record id="invoice_header" model="ir.header_webkit">
+            <field name="name">Cabecera factura Netllar</field>
+            <field name="margin_top" eval="30.0"/>
+            <field name="margin_bottom" eval="20.0"/>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="footer_html"><![CDATA[
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <script>
+        function subst() {
+        var vars={};
+        var x=document.location.search.substring(1).split('&');
+        for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+        var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+        for(var i in x) {
+        var y = document.getElementsByClassName(x[i]);
+        for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+            }
+        }
+    </script>
+</head>
+<body style="border:0; margin: 0;" onload="subst()">
+    <table style="width:100%">
+        <tr >
+            <td style="text-align:center;font-size:11;">☎  ${company.partner_id.phone} &nbsp; &nbsp; | &nbsp; &nbsp; ${company.partner_id.email} &nbsp; &nbsp; | &nbsp; &nbsp; www.netllar.es</td>
+        </tr>
+    </table>
+    <table style="border-top: 1px solid black; width: 100%">
+        <tr >
+            <td style="text-align:center;font-size:10;">Inscrita en el registro mercantil de ${company.company_registry}</td>
+        </tr>
+        <tr>
+            <td style="text-align:center;font-size:10;">Página <span class="page"/> de <span class="topage"/></td>
+        </tr>
+    </table>
+</body>]]></field>
+            <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+        <table class="header" style="border-bottom: 1px solid black; width: 100%;">
+            <tr><td width="30%">
+                ${helper.embed_image('', company.logo, 250) | n}
+            </td>
+            <td width="60%" align="right">
+                <table width="10%">
+                    <tr><td class="name" nowrap><b>${company.name}</b></td></tr>
+                    <tr><td nowrap>${company.partner_id.street or ''}</td></tr>
+                    <tr><td nowrap>${company.partner_id.zip or ''} ${company.partner_id.city or ''} (${company.partner_id.country_id.name or ''})</td></tr>
+                    <tr><td nowrap>NIF: ${company.partner_id.vat and company.partner_id.vat.upper().replace('ES', '') or ''}</td></tr>
+                </table>
+            </td>
+            <td width="10%">&nbsp;</td>
+            </tr>
+        </table> ${_debug or ''|n} </body>
+</html>]]>
+            </field>
+            <field name="css"><![CDATA[
+body {
+    font-family: helvetica;
+    font-size: 11px;
+}
+table {
+    font-family: helvetica;
+    font-size: 11px;
+}
+.header {
+    margin-left: 10px;
+    text-align: left;
+    width: 150px;
+    font-size: 12px;
+}
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+.basic_table{
+    text-align: center;
+    border: 1px solid lightGrey;
+    border-collapse: collapse;
+}
+.basic_table th {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+.basic_table td {
+    border: 1px solid lightGrey;
+    font-size: 12px;
+}
+.list_table {
+    border-color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+.list_table td {
+    border-color: gray;
+    border-top: 1px solid gray;
+    text-align: left;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+.list_table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.list_table thead {
+    display: table-header-group;
+}
+.address table {
+    font-size: 11px;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+.address .shipping {
+}
+
+.address .recipient {
+    font-size: 14px;
+    background-color: #EEEEEE;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+table .address_title {
+    font-weight: bold;
+}
+.address td.name {
+    font-weight: bold;
+}
+td.amount, th.amount {
+    text-align: center;
+}
+
+td.total {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    text-align: right;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+tr.line .note {
+    border-style: none;
+    font-size: 9px;
+    padding-left: 10px;
+}
+tr.line {
+    margin-bottom: 10px;
+}
+]]>
+            </field>
+        </record>
+
+        <!-- Informe de factura -->
+        <record model="ir.actions.report.xml" id="account.account_invoices">
+            <field name="report_type">webkit</field>
+            <field name="report_file">netllar_voice/report/account_invoice.mako</field>
+            <field name="webkit_header" ref="netllar_voice.invoice_header"/>
+        </record>
+
+    </data>
+</openerp>

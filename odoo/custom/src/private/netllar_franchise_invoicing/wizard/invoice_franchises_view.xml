@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="cdr_manual_import_view" model="ir.ui.view">
+            <field name="name">account.telecommunications.invoice_franchises</field>
+            <field name="model">account.telecommunications.invoice_franchises</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Invoice franchises">
+                    <group colspan="4">
+                        <label string="Select date interval to invoice to franchises" colspan="4"/>
+                        <label string="ADVERTENCIA: Sólo se puede facturar un mes cada vez." colspan="4"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group colspan="4">
+                        <label string="Select franchises to invoice:" colspan="4"/>
+                        <field name="company_ids"
+                               colspan="4"
+                               nolabel="1"
+                                />
+                    </group>
+                    <group>
+                        <field name="journal_id"/>
+                    </group>
+                    <label string="REMARK: There is no control on which elements are already invoiced." colspan="4"/>
+                    <separator string="" colspan="4"/>
+                    <footer>
+                        <button name="action_invoice"
+                                string="Make invoices"
+                                type="object"
+                                class="oe_highlight"
+                                />
+                        o
+                        <button special="cancel"
+                                string="Cancel"
+                                class="oe_link"
+                                />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_franchise_action" model="ir.actions.act_window">
+            <field name="name">Invoice franchises</field>
+            <field name="res_model">account.telecommunications.invoice_franchises</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_account_voice"
+                name="Voice"
+                parent="account.menu_finance_periodical_processing"
+                sequence="1"/>
+
+        <menuitem id="menu_invoice_franchise"
+                name="Invoice franchises"
+                action="invoice_franchise_action"
+                parent="menu_account_voice"
+                sequence="1"/>
+
+    </data>
+</openerp>

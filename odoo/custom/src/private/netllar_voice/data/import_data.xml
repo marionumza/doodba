@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <!--cron jobs -->
+    <record model="ir.cron" id="cron_cdr_periodic_import">
+        <field name="name">CDR periodic import</field>
+        <field name="interval_number">1</field>
+        <field name="priority">10</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'sale.telecommunications.import.profile'"/>
+        <field name="function" eval="'_import_planned'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+
+    <record model="ir.cron" id="cron_exceptions_reimport">
+        <field name="name">CDR lines exception re-import</field>
+        <field name="interval_number">1</field>
+        <field name="priority">10</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'sale.telecommunications.import.exception'"/>
+        <field name="function" eval="'_relaunch_exceptions_planned'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+
+</odoo>

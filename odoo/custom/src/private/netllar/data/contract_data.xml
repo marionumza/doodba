@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!--Sequence for agreement -->
+    <record model="ir.sequence" id="seq_agreement">
+        <field name="name">Contract sequence</field>
+        <field name="code">sale.tc.sequence</field>
+        <field name="padding" eval="6"/>
+        <field name="prefix">CT-%(y)s-</field>
+    </record>
+
+    <!--cron jobs -->
+    <record model="ir.cron" id="cron_contract_make_invoices">
+        <field name="name">Realizar facturas de los contratos</field>
+        <field name="interval_number">1</field>
+        <field name="priority">10</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model" eval="'sale.telecommunications.contract'"/>
+        <field name="function" eval="'make_invoices_planned'"/>
+        <field name="args" eval="'()'"/>
+    </record>
+        
+</odoo>

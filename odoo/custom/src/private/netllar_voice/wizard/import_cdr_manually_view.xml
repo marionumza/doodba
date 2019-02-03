@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="cdr_manual_import_view" model="ir.ui.view">
+            <field name="name">sale.telecommunications.cdr.wizard.import_manual.view</field>
+            <field name="model">sale.telecommunications.cdr.wizard.import_manual</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import CDR file">
+                    <group colspan="4" >
+                        <field name="import_type"/>
+                        <field name="profile_id"/>
+                        <field name="input_file" filename="file_name" colspan="2"/>
+                        <field name="file_name" colspan="2" invisible="1"/>
+                    </group>
+                    <separator string="" colspan="4"/>
+                    <footer>
+                        <button class="oe_highlight" name="import_cdr" string="Import file" type="object"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="cdr_manual_import_action" model="ir.actions.act_window">
+            <field name="name">Import CDR file</field>
+            <field name="res_model">sale.telecommunications.cdr.wizard.import_manual</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="cdr_manual_import_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="cdr_manual_import_menu"
+            name="Import CDR file"
+            action="cdr_manual_import_action"
+            parent="menu_sale_telecommunications_cdr"
+            sequence="1"/>
+
+    </data>
+</openerp>

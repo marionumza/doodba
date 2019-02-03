@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="view_create_payment_order" model="ir.ui.view">
+            <field name="name">Payment order create wizard (include returned payments)</field>
+            <field name="model">payment.order.create</field>
+            <field name="inherit_id" ref="account_payment.view_create_payment_order"/>
+            <field name="arch" type="xml">
+                <field name="duedate" position="after">
+                    <field name="include_returned_invoices"/>
+                    <field name="mandate_selection" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

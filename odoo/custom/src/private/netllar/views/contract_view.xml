@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Views -->
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_line_tree">
+            <field name="name">sale.telecommunications.contract.line.tree</field>
+            <field name="model">sale.telecommunications.contract.line</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Contract lines">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="product_id"/>
+                    <field name="additional_description"/>
+                    <field name="quantity"/>
+                    <field name="price"/>
+                    <field name="list_price"/>
+                    <field name="discount"/>
+                    <field name="invoicing_interval"/>
+                    <field name="invoicing_unit"/>
+                    <field name="last_invoice_date" readonly="True"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_line_form">
+            <field name="name">sale.telecommunications.contract.line.form</field>
+            <field name="model">sale.telecommunications.contract.line</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Contract line">
+                    <group colspan="4">
+                        <field name="product_id"/>
+                        <field name="additional_description"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="quantity"/>
+                            <field name="price"/>
+                            <field name="invoicing_unit"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                            <field name="discount"/>
+                            <field name="list_price"/>
+                            <field name="invoicing_interval"/>
+                        </group>
+                    </group>
+                    <group colspan="4" col="2">
+                        <field name="notes"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_invoice_tree">
+            <field name="name">
+                sale.telecommunications.contract.invoice.tree</field>
+            <field name="model">sale.telecommunications.contract.invoice</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Contract invoices" editable="top">
+                    <field name="date"/>
+                    <button name="view_invoice" string="View invoice" type="object"
+                        icon="terp-gtk-go-back-rtl"/>
+                    <field name="invoice_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_filter">
+            <field name="name">sale.telecommunications.contract.search</field>
+            <field name="model">sale.telecommunications.contract</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search contract">
+                   <group>
+                       <field name="partner_id"/>
+                       <field name="number"/>
+                       <field name="name"/>
+                       <field name="start_date"/>
+                       <field name="company_id" groups="base.group_multi_company"/>
+                   </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_tree">
+            <field name="name">sale.telecommunications.contract.tree</field>
+            <field name="model">sale.telecommunications.contract</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Contracts">
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="start_date"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view"
+            id="view_sale_telecommunications_contract_form">
+            <field name="name">sale.telecommunications.contract.form</field>
+            <field name="model">sale.telecommunications.contract</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                    <group colspan="3" col="2">
+                        <field name="name"/>
+                    </group>
+                    <group colspan="1" col="4">
+                        <field name="number"/>
+                        <field name="active"/>
+                    </group>
+                    <group colspan="4" col="6">
+                        <field name="partner_id"
+                            context="{'search_default_customer': 1}"
+                            domain="[('customer', '=', True)]"/>
+                        <field name="company_id"
+                            groups="base.group_multi_company"/>
+                        <field name="journal_id"
+                            domain="[('company_id', '=', company_id), ('type', '=', 'sale')]"/>
+                    </group>
+                    <group colspan="4" col="6">
+                        <field name="start_date"
+                               attrs="{'readonly':[('state','!=','empty')]}"
+                        />
+                        <field name="period_type"/>
+                        <field name="invoicing_day"/>
+                    </group>
+                    <group colspan="4" col="8">
+                        <field name="prolong" />
+                        <group
+                            attrs="{'invisible': [('prolong','!=', 'fixed')]}">
+                            <field name="end_date"
+                                attrs="{'required': [('prolong', '=', 'fixed')]}"/>
+                        </group>
+                        <group
+                            attrs="{'invisible': [('prolong','!=', 'recurrent')]}">
+                            <field name="prolong_interval"
+                                attrs="{'required': [('prolong', '!=', 'fixed')]}"/>
+                            <field name="prolong_unit"
+                                attrs="{'required': [('prolong', '!=', 'fixed')]}"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Lines">
+                            <field colspan="4" mode="tree" name="contract_line"
+                                widget="one2many_list" nolabel="1"/>
+                        </page>
+                        <page string="Invoices">
+                            <field colspan="4" mode="tree" name="invoice_line"
+                                widget="one2many_list" nolabel="1"/>
+                        </page>
+                        <page string="Notes">
+                            <field colspan="4" name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>
+                    <group colspan="4" col="8">
+                        <field name="last_renovation_date" readonly="1"
+                            attrs="{'invisible': [('prolong','!=', 'recurrent')]}"/>
+                        <field name="next_expiration_date" readonly="1"
+                            attrs="{'invisible': [('prolong','!=', 'recurrent')]}"/>
+                        <field name="state" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Windows actions -->
+
+        <record model="ir.actions.act_window"
+                id="action_sale_telecommunications_contract">
+            <field name="name">Contracts</field>
+            <field name="res_model">sale.telecommunications.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id"
+                    ref="view_sale_telecommunications_contract_filter"/>
+            <field name="help">Contracts are the way you define the commercial relation with your customers, which specify certain products/services that you are providing them that requires a periodical invoice.</field>
+        </record>
+
+        <!-- Windows actions views -->
+
+        <record model="ir.actions.act_window.view"
+            id="action_sale_telecommunications_contract_view_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id"
+                ref="view_sale_telecommunications_contract_tree"/>
+            <field name="act_window_id"
+                ref="action_sale_telecommunications_contract"/>
+        </record>
+
+        <record model="ir.actions.act_window.view"
+            id="action_sale_telecommunications_contract_view_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id"
+                ref="view_sale_telecommunications_contract_form"/>
+            <field name="act_window_id"
+                ref="action_sale_telecommunications_contract"/>
+        </record>
+
+        <!-- Menu items -->
+
+        <menuitem name="Contracts" id="menu_sale_telecommunications_contracts"
+            parent="base.menu_sales"
+            action="action_sale_telecommunications_contract" sequence="4"/>
+
+        <!--  Server action -->
+
+        <record model="ir.actions.server" id="action_contract_make_invoices">
+            <field name="name">Make invoices for this/these contract/s</field>
+            <field name="model_id" ref="model_sale_telecommunications_contract"/>
+            <field name="state">code</field>
+            <field name="code">action = obj.make_invoices()</field>
+        </record>
+
+        <record model="ir.values" id="ir_contract_make_invoices">
+            <field name="key2">client_action_multi</field>
+            <field name="model">sale.telecommunications.contract</field>
+            <field name="name">Make invoices for this/these contract/s</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_contract_make_invoices"/>
+        </record>
+
+</odoo>

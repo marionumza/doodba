@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <delete model="ir.ui.menu" search="[('name', '=', 'Documents')]" />
+        <delete model="ir.ui.menu" search="[('name', '=', 'Document Dashboard')]" />
+        <delete model="ir.ui.menu" search="[('name', '=', 'Statistics by User')]" />
+
+    </data>
+</openerp>

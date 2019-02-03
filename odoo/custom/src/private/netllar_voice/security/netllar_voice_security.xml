@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="group_sale_telecommunications" model="res.groups">
+            <field name="name">Telecommunications manager</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="comment">The user will be sales management and will manage telecommunications objects (bonds, prefixes, and so on).</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_sale_manager'))]"/>
+        </record>
+
+        <record id="cli_company_rule" model="ir.rule">
+            <field name="name">Cli multi-company</field>
+            <field name="model_id" ref="model_sale_telecommunications_cli"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'child_of', [user.company_id.id])]</field>
+        </record>
+
+    </data>
+</openerp>

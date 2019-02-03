@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_sale_telecommunications_bond_tree" model="ir.ui.view">
+            <field name="name">sale.telecommunications.bond.tree</field>
+            <field name="model">sale.telecommunications.bond</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <tree string="Bonds">
+                    <field name="name"/>
+                    <field name="voice_exceeded_product_id"/>
+                    <field name="sms_exceeded_product_id"/>
+                    <field name="mms_exceeded_product_id"/>
+                    <field name="data_exceeded_product_id"/>
+                    <field name="bond_line"/>
+                    <field name="rule_lines"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_telecommunications_bond_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.bond.form</field>
+            <field name="model">sale.telecommunications.bond</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Prefixes groups">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" class="oe_title"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="voice_exceeded_product_id"/>
+                            <field name="mms_exceeded_product_id"/>
+                        </group>
+                        <group>
+                            <field name="sms_exceeded_product_id"/>
+                            <field name="data_exceeded_product_id"/>
+                        </group>
+                    </group>
+                    <field name="bond_line" colspan="4" nolabel="1" widget="one2many_list">
+                        <tree string="Bond lines" editable="top">
+                            <field name="line_type"/>
+                            <field name="line_subtype"/>
+                            <field name="prefix_group_id"/>
+                            <field name="max_minutes"/>
+                        </tree>
+                    </field>
+                    <field name="rule_lines" colspan="4" nolabel="1" widget="one2many_list"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sale_telecommunications_bond">
+            <field name="name">Bonds</field>
+            <field name="res_model">sale.telecommunications.bond</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Bonds"
+            id="menu_sale_telecommunications_bonds"
+            parent="menu_sale_telecommunications_voice"
+            action="action_sale_telecommunications_bond"
+            sequence="2"/>
+
+    </data>
+</openerp>

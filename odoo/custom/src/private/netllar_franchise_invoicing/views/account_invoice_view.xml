@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="invoice_voice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form.voice</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Franchise CDR lines"
+                            attrs="{'invisible': [('franchise_line', '=', [])]}">
+                        <field name="franchise_line" nolabel="1">
+                            <tree string="Franchise CDR lines">
+                                <field name="date"/>
+                                <field name="caller_id"/>
+                                <field name="line_type"/>
+                                <field name="dest"/>
+                                <field name="length"/>
+                                <field name="customer_price"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

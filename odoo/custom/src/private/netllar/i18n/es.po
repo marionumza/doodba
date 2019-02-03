@@ -1,0 +1,549 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* netllar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-30 07:38+0000\n"
+"PO-Revision-Date: 2016-12-30 07:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_additional_description
+msgid "Add. description"
+msgstr "Descripción adicional"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_additional_description
+msgid "Additional description that will be added as invoice lines notes"
+msgstr "Descripción adicional que será añadida como notas en las líneas de factura"
+
+#. module: netllar
+#: sql_constraint:sale.telecommunications.contract.line:0
+msgid "All invoicing intervals must be greater than 0.\n"
+""
+msgstr "Todos los intervalos de facturación deben ser mayores de 0.\n"
+""
+
+#. module: netllar
+#: sql_constraint:sale.telecommunications.contract.line:0
+msgid "All product quantities must be greater than 0.\n"
+""
+msgstr "Todas las cantidades de producto deben ser mayor de 0.\n"
+""
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_account_journal_anticipation_days
+msgid "Anticipation days"
+msgstr "Días de anticipación"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_list_price
+msgid "Base price to compute the customer price. Sometimes called the catalog price."
+msgstr "Precio base para calcular el precio de los clientes. A veces llamado precio de catalogo."
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_start_date
+msgid "Beginning of the contract line. Keep empty for no checking."
+msgstr "Comienzo de la línea del contrato. Dejar vacío para no efectuar ningún control."
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_start_date
+msgid "Beginning of the contract. Keep empty to use the current date"
+msgstr "Comienzo del contrato. Déjelo en blanco para usar la fecha actual"
+
+#. module: netllar
+#: model:ir.actions.act_window,name:netllar.action_account_invoice_cancel
+msgid "Cancel Invoices"
+msgstr "Cancelar facturas"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_company_id
+msgid "Company that signs the contract"
+msgstr "La compañía que firma el contrato"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_form
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: netllar
+#: code:addons/netllar/models/contract.py:173
+#, python-format
+msgid "Contract end date must be greater than start date"
+msgstr "La fecha de finalización del contrato debe ser mayor que la fecha de inicio"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_invoice_tree
+msgid "Contract invoices"
+msgstr "Facturas de contratos"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_line_form
+msgid "Contract line"
+msgstr "Línea del contrato"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_contract_line
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_line_tree
+msgid "Contract lines"
+msgstr "Líneas de contrato"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_number
+msgid "Contract number"
+msgstr "Nº contrato"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_contract_id
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_contract_id
+msgid "Contract reference"
+msgstr "Referencia del contrato"
+
+#. module: netllar
+#: code:addons/netllar/models/contract.py:185
+#, python-format
+msgid "Contract start date must be smaller or equal than lines start date"
+msgstr "La fecha de finalización del contrato debe ser menor o igual que las fechas de inicio de las líneas"
+
+#. module: netllar
+#: model:ir.actions.act_window,name:netllar.action_sale_telecommunications_contract
+#: model:ir.ui.menu,name:netllar.menu_sale_telecommunications_contracts
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_tree
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: netllar
+#: model:ir.actions.act_window,help:netllar.action_sale_telecommunications_contract
+msgid "Contracts are the way you define the commercial relation with your customers, which specify certain products/services that you are providing them that requires a periodical invoice."
+msgstr "Los contratos es la forma en la que define la relación comercial con sus clientes, que especifica ciertos productos/servicios que está proveyéndoles que requieren de una factura periódica."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_create_uid
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_create_uid
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_create_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_create_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_partner_id
+msgid "Customer you are making the contract with"
+msgstr "Cliente con el que está firmando el contrato"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_date
+msgid "Date of invoice creation"
+msgstr "Fecha de creación de la factura"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_invoicing_day
+msgid "Day of month to invoice the contract. Leave it blank to invoice on its natural period day."
+msgstr "Día del mes para facturar el contrato. Dejar en blanco para facturar en su día del periodo natural."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_display_name
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_display_name
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_end_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_end_date
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_end_date
+msgid "End date of the contract"
+msgstr "Fecha de finalización del contrato"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_end_date
+msgid "End of the contract line. Keep empty for no checking."
+msgstr "Fecha final de la línea del contrato. Dejar vacío para no efectuar ningún control."
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,state:0
+msgid "First invoice created"
+msgstr "Primera factura creada"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong:0
+msgid "Fixed term"
+msgstr "Plazo fijo"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_line
+msgid "Generated invoices"
+msgstr "Facturas generadas"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_id
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_id
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_prolong_interval
+msgid "Interval"
+msgstr "Intervalo"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_invoicing_interval
+msgid "Interval in time units for invoicing this product"
+msgstr "Intervalo en unidades de tiempo para este producto"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_prolong_interval
+msgid "Interval in time units to prolong the contract until new renewall (that is automatic for unlimited term, manual for renewable fixed term)."
+msgstr "Intervalo en unidades de tiempo para prolongar el contrato hasta la siguiente renovación (que es automática si se ha definido plazo ilimitado, y manual si se ha seleccionado plazo fijo renovable)."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_prolong_unit
+msgid "Interval unit"
+msgstr "Unidad de tiempo"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_form
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoicing_day
+msgid "Invoicing day"
+msgstr "Día de facturación"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_invoicing_interval
+msgid "Invoicing interval"
+msgstr "Intervalo de facturación"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_invoicing_unit
+msgid "Invoicing interval unit"
+msgstr "Unidad de tiempo de facturación"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_account_journal
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_journal_id
+msgid "Journal where invoices are going to be created"
+msgstr "Diario en el que se crean las facturas"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_invoice_date
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract___last_update
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice___last_update
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_write_uid
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_write_uid
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_invoice_write_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_write_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_last_renovation_date
+msgid "Last date when contract was renewed (same as start date if not renewed)"
+msgstr "Última fecha en la que el contrato fue renovado (igual a la fecha de inicio si no ha habido ninguna renovación)"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_last_invoice_date
+msgid "Last invoice date"
+msgstr "Última fecha de factura"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_last_renovation_date
+msgid "Last renovation date"
+msgstr "Última fecha de renovación"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_form
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_list_price
+msgid "List price"
+msgstr "PVP"
+
+#. module: netllar
+#: model:ir.actions.server,name:netllar.action_contract_make_invoices
+msgid "Make invoices for this/these contract/s"
+msgstr "Generar facturas para este/os contrato/s"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_name
+msgid "Name that helps to identify the contract"
+msgstr "Nombre que ayuda a identificar el contrato"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_next_expiration_date
+msgid "Next expiration date"
+msgstr "Próxima fecha de expiración"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_notes
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_notes
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_number
+msgid "Number of contract. Keep empty to get the number assigned by a sequence."
+msgstr "Número de contrato. Déjelo en blanco para que se le asigne un número automático."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_period_type
+msgid "Period type"
+msgstr "Tipo de periodo"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_period_type
+msgid "Period type for invoicing.\n"
+"Pre-paid: Invoices are generated for the upcoming period.\n"
+"Post-paid': Invoices are generated for the consumed period.\n"
+"Pre-paid - Natural month': Invoices are generated for the upcoming period, using natural months for the period.\n"
+"Post-paid - Natural month': Invoices are generated for the consumed period, using natural months for the period. "
+msgstr "Tipo de periodo para la facturación.\n
+"Prepago: Las facturas se generan para el siguiente periodo.\n"
+"Pospago: Las facturas se generan para el periodo consumido.\n"
+"Prepago - Mes natural: Las facturas se generan para el siguiente periodo, usando los meses naturales como periodo.\n"
+"Pospago - Mes natural: Las facturas se generan para el mes consumido, usando los mese naturales como periodo."
+
+#. module: netllar
+#: code:addons/netllar/models/contract.py:768
+#, python-format
+msgid "Period: from %s to %s"
+msgstr "Periodo: de %s a %s"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,period_type:0
+msgid "Post-paid"
+msgstr "Pospago"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,period_type:0
+msgid "Post-paid - Natural month"
+msgstr "Pospago - Mes natural"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,period_type:0
+msgid "Pre-paid"
+msgstr "Prepago"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,period_type:0
+msgid "Pre-paid - Natural month"
+msgstr "Prepago - Mes natural"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_name
+msgid "Product description"
+msgstr "Descripción del producto"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_quantity
+msgid "Product quantity"
+msgstr "Cantidad del producto"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_prolong
+msgid "Prolongation"
+msgstr "Prolongación"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_quantity
+msgid "Quantity of the product to invoice"
+msgstr "Cantidad del producto a facturar"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_filter
+msgid "Search contract"
+msgstr "Buscar contrato"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_account_journal_anticipation_days
+msgid "Sets the days that contracts associated to this journal are going to anticipate invoicing day. If set to 0, no anticipation is done."
+msgstr "Define los días que los contratos asociados a este diario van a anticipar su día de facturación. Si está a 0, no se realizará anticipación."
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_prolong
+msgid "Sets the term of the contract. 'Renewable fixed term': It sets a fixed term, but with possibility of manual renew; 'Unlimited term': Renew is made automatically; 'Fixed term': The term is fixed and there is no possibility to renew."
+msgstr "Establece el plazo del contrato. 'Plazo fijo renovable': Establece un plazo fijo, pero con posibilidad de renovación manual; 'Plazo ilimitado': La renovación se realiza automáticamente; 'Plazo fijo': El plazo está fijado y no hay posibilidad de renovación."
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_price
+msgid "Specific price"
+msgstr "Precio específico"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_line_price
+msgid "Specific price for this product. Keep empty to use the list price while generating invoice"
+msgstr "Precio específico para este producto. Déjelo en blanco para usar el PVP cuando se generen las facturas"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_line_start_date
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_start_date
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: netllar
+#: model:ir.model.fields,field_description:netllar.field_sale_telecommunications_contract_state
+msgid "State"
+msgstr "Estado"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_prolong_unit
+msgid "Time unit for the prolongation interval"
+msgstr "Unidad de tiempo para el intervalo de prolongación del contrato"
+
+#. module: netllar
+#: model:ir.model.fields,help:netllar.field_sale_telecommunications_contract_active
+msgid "Unchecking this field, quotas are not generated"
+msgstr "Desmarcando este campo, no se generan facturas ni avisos"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong:0
+msgid "Unlimited term"
+msgstr "Plazo ilimitado"
+
+#. module: netllar
+#: model:ir.ui.view,arch_db:netllar.view_sale_telecommunications_contract_invoice_tree
+msgid "View invoice"
+msgstr "Ver factura"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,state:0
+msgid "With invoices"
+msgstr "Con facturas"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,state:0
+msgid "Without invoices"
+msgstr "Sin facturas"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong_unit:0
+#: selection:sale.telecommunications.contract.line,invoicing_unit:0
+msgid "days"
+msgstr "días"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong_unit:0
+#: selection:sale.telecommunications.contract.line,invoicing_unit:0
+msgid "months"
+msgstr "meses"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_sale_telecommunications_contract
+msgid "sale.telecommunications.contract"
+msgstr "sale.telecommunications.contract"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_sale_telecommunications_contract_invoice
+msgid "sale.telecommunications.contract.invoice"
+msgstr "sale.telecommunications.contract.invoice"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_sale_telecommunications_contract_line
+msgid "sale.telecommunications.contract.line"
+msgstr "sale.telecommunications.contract.line"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_sale_telecommunications_contract_renewal
+msgid "sale.telecommunications.contract.renewal"
+msgstr "sale.telecommunications.contract.renewal"
+
+#. module: netllar
+#: model:ir.model,name:netllar.model_sale_telecommunications_renew_wizard
+msgid "sale.telecommunications.renew_wizard"
+msgstr "sale.telecommunications.renew_wizard"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong_unit:0
+#: selection:sale.telecommunications.contract.line,invoicing_unit:0
+msgid "weeks"
+msgstr "semanas"
+
+#. module: netllar
+#: selection:sale.telecommunications.contract,prolong_unit:0
+#: selection:sale.telecommunications.contract.line,invoicing_unit:0
+msgid "years"
+msgstr "años"
+

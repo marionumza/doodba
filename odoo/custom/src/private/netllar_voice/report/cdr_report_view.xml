@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sale_telecommunications_cdr_line_report_view_tree"
+                model="ir.ui.view">
+            <field name="name">sale.telecommunications.cdr.line.report.tree</field>
+            <field name="model">sale.telecommunications.cdr.line.report</field>
+            <field name="arch" type="xml">
+                <tree string="CDR lines report">
+                   <field name="date"/>
+                   <field name="line_type"/>
+                   <field name="caller_id"/>
+                   <field name="dest"/>
+                   <field name="dest_id"/>
+                   <field name="length" sum="Total length"/>
+                   <field name="profile_id"/>
+                   <field name="cdr_name"/>
+                   <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_telecommunications_cdr_line_report_view_search"
+                model="ir.ui.view">
+            <field name="name">sale.telecommunications.cdr.line.report.search</field>
+            <field name="model">sale.telecommunications.cdr.line.report</field>
+            <field name="arch" type="xml">
+                <search string="CDR lines report">
+                   <field name="date"/>
+                   <field name="line_type"/>
+                   <field name="caller_id"/>
+                   <field name="dest"/>
+                   <field name="dest_id"/>
+                   <field name="length" sum="Total length"/>
+                   <field name="profile_id"/>
+                   <field name="cdr_name"/>
+                   <field name="company_id"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Call date" name="date"
+                                context="{'group_by':'date'}"/>
+                        <filter string="Type" name="line_type"
+                                context="{'group_by':'line_type'}" />
+                        <filter string="Company" name="company_id"
+                                context="{'group_by':'company_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="sale_telecommunications_cdr_line_action"
+                model="ir.actions.act_window">
+            <field name="name">CDR Line Analysis</field>
+            <field name="res_model">sale.telecommunications.cdr.line.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id"
+                   ref="sale_telecommunications_cdr_line_report_view_search" />
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem action="sale_telecommunications_cdr_line_action"
+                  id="sale_telecommunications_cdr_line_menuitem"
+                  groups="group_sale_telecommunications"
+                  parent="base.next_id_64" sequence="10" />
+    </data>
+</openerp>

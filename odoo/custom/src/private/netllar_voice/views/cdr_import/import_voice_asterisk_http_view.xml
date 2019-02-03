@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_import_profile_http_form" model="ir.ui.view">
+            <field name="name">sale.telecommunications.import.profile.http.form</field>
+            <field name="model">sale.telecommunications.import.profile</field>
+            <field name="inherit_id" ref="view_import_profile_form"/>
+            <field name="arch" type="xml">
+                <page string="Parameters" position="inside">
+                    <group>
+                        <group>
+                            <field name="asterisk_host"
+                                    attrs="{'invisible': [('import_source', '!=', 'asterisk_http')], 'required': [('import_source', '=', 'asterisk_http')]}"/>
+                        </group>
+                        <group attrs="{'invisible': ['|', ('import_source', '!=', 'asterisk_http'), ('cdr_ids', '!=', [])]}">
+                            <field name="initial_date"/>
+                            <button name="initial_import_asterisk_http"
+                                    string="Importación inicial"
+                                    type="object"
+                            />
+                        </group>
+                    </group>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

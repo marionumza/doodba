@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_invoice_franchise_line_manager,account.invoice.franchise_line,model_account_invoice_franchise_line,netllar_voice.group_sale_telecommunications,1,1,1,1
+access_account_invoice_franchise_line_user,account.invoice.franchise_line,model_account_invoice_franchise_line,base.group_sale_salesman,1,0,0,0
