@@ -1,0 +1,48 @@
+account-invoicing:
+    - account_invoice_pricelist
+account-payment:
+    - account_due_list
+    - account_due_list_payment_mode
+    - account_payment_return
+    - account_payment_return_import
+    - account_payment_return_import_sepa_pain
+bank-payment:
+    - account_banking_mandate
+    - account_banking_pain_base
+	- account_banking_sepa_credit_transfer
+	- account_banking_sepa_direct_debit
+	- account_payment_mode
+	- account_payment_order
+	- account_payment_partner
+	- account_payment_sale
+    #- account_payment_transfer_reconcile_batch
+commission:
+    - sale_commission
+connector:
+    - connector
+crm:
+    - crm_claim
+    - crm_claim_code
+knowledge:
+    - document_page
+    - knowledge
+l10n-spain:
+    - l10n_es_partner
+    - l10n_es_toponyms
+partner-contact:
+    - base_location
+    - base_location_geonames_import
+queue:
+    - queue_job
+server-auth:
+    - auth_brute_force
+    - password_security
+server-brand:
+    - disable_odoo_online
+server-ux:
+    - mass_editing
+web:
+    - web_advanced_search
+    - web_dialog_size
+    - web_responsive
+    - web_searchbar_full_width
