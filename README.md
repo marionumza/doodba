@@ -8,7 +8,7 @@
 [![](https://api.travis-ci.org/Tecnativa/doodba.svg)](https://travis-ci.org/Tecnativa/doodba)
 
 
-** Doodba ** significa ** Do ** cker ** Od ** oo ** Ba ** se, y es una
+**Doodba** significa **Do **cker **Od **oo **Ba** se, y es una
 imagen altamente opinada lista para poner [Odoo] (https://www.odoo.com) 
 dentro de ella, pero ** sin Odoo **.
 
