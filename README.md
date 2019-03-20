@@ -7,39 +7,45 @@
 
 [![](https://api.travis-ci.org/Tecnativa/doodba.svg)](https://travis-ci.org/Tecnativa/doodba)
 
-**Doodba** stands for **Do**cker **Od**oo **Ba**se, and it is a
-highly opinionated image ready to put [Odoo](https://www.odoo.com) inside it,
-but **without Odoo**.
 
-## What?
+** Doodba ** significa ** Do ** cker ** Od ** oo ** Ba ** se, y es una
+imagen altamente opinada lista para poner [Odoo] (https://www.odoo.com) 
+dentro de ella, pero ** sin Odoo **.
 
-Yes, the purpose of this is to serve as a base for you to build your own Odoo
-project, because most of them end up requiring a big amount of custom patches,
-merges, repositories, etc. With this image, you have a collection of good
-practices and tools to enable your team to have a standard Odoo project
-structure.
+## ¿Por qué?
 
-BTW, we use [Debian][]. I hope you like that.
+
+Ok, el propósito de esto es servir como una base para que usted pueda construir
+su propio proyecto Odoo, porque la mayoría de ellos requieren una gran cantidad
+de parches personalizados, fusiones, repositorios, etc. Con esta imagen, tiene 
+un recopilación de buenas prácticas y herramientas para permitir que su equipo
+tenga una estructura estándar del proyecto de Odoo.
+
+
+Por cierto, usamos [Debian] []. Espero que te guste.
 
   [Debian]: https://debian.org/
 
-## Why?
+## ¿Por qué?
 
-Because developing Odoo is hard. You need lots of customizations, dependencies,
-and if you want to move from one version to another, it's a pain.
+Porque desarrollar Odoo es difícil. Necesitas muchas personalizaciones, dependencias,
+y si quieres pasar de una versión a otra, es un dolor.
 
-Also because nobody wants Odoo as it comes from upstream, you most likely will
-need to add custom patches and addons, at least, so we need a way to put all
-together and make it work anywhere quickly.
+Además, como nadie quiere a Odoo ya que proviene de lo anterior, lo más probable es 
+que lo haga. Necesitamos agregar parches y complementos personalizados, al menos, así 
+que necesitamos una manera de poner todos Juntos y haz que funcione en cualquier 
+lugar rápidamente.
 
-## How?
+## ¿Cómo?
 
 You can start working with this straight away with our [scaffolding][].
+Puede comenzar a trabajar con esto de inmediato con nuestros [andamios] [].
 
-## Image usage
 
-Basically, every directory you have to worry about is found inside `/opt/odoo`.
-This is its structure:
+## Uso de imagén
+
+Básicamente, cada directorio del que tiene que preocuparse se encuentra dentro `/opt/odoo`.
+Esta es su estructura:
 
     custom/
         entrypoint.d/
@@ -71,59 +77,60 @@ This is its structure:
         addons/
         odoo.conf
 
-Let's go one by one.
+Vayamos uno por uno.
 
-### `/opt/odoo/custom`: The important one
+### `/opt/odoo/custom`: El importante
 
-Here you will put everything related to your project.
+Aquí pondrás todo lo relacionado con tu proyecto.
 
 #### `/opt/odoo/custom/entrypoint.d`
 
-Any executables found here will be run when you launch your container, before
-running the command you ask.
+Cualquier ejecutable encontrado aquí se ejecutará cuando inicie su contenedor,
+antes de ejecutando el comando usted pregunta.
 
 #### `/opt/odoo/custom/build.d`
 
-Executables here will be aggregated with those in `/opt/odoo/common/build.d`.
+Los ejecutables aquí serán agregados con los de `/opt/odoo/common/build.d`.
 
-The resulting set of executables will then be sorted alphabetically (ascending)
-and then subsequently run.
+El conjunto resultante de ejecutables se ordenará alfabéticamente (ascendente)
+y luego correr.
 
 #### `/opt/odoo/custom/conf.d`
 
-Files here will be environment-variable-expanded and concatenated in
-`/opt/odoo/auto/odoo.conf` in the entrypoint.
+Los archivos aquí serán expandidos por la variable de entorno y concatenados en
+`/opt/odoo/auto/odoo.conf` en el punto de entrada.
 
 #### `/opt/odoo/custom/ssh`
 
-It must follow the same structure as a standard `~/.ssh` directory, including
-`config` and `known_hosts` files. In fact, it is completely equivalent to
+Debe seguir la misma estructura que un estándar. `~/.ssh` directorio, incluyendo
+`config` y `known_hosts` De hecho, es completamente equivalente a
 `~root/.ssh`.
 
-The `config` file can contain `IdentityFile` keys to represent the private
-key that should be used for that host. Unless specified otherwise, this
-defaults to `identity[.pub]`, `id_rsa[.pub]` or `id_dsa[.pub]` files found in
-this same directory.
+El archivo `config` contiene `IdentityFile` Claves para representar lo privado. 
+Clave que debe ser utilizada para ese host. A menos que se especifique lo contrario,
+este por defecto a `identity[.pub]`, `id_rsa[.pub]` o `id_dsa[.pub]` los archivos se
+encuentran en ese mismo directorio
 
-This is very useful **to use deployment keys** that grant git access to your
-private repositories.
+Esto es muy útil **para usar las claves de implementación** que otorgan acceso 
+de git a su 115 Repositorios privados.
 
-Example - a private key file in the `ssh` folder named `my_private_key` for
-the host `repo.example.com` would have a `config` entry similar to the below:
+Ejemplo: un archivo de clave privada en la carpeta `ssh` llamada` my_private_key` 
+para el host `repo.example.com` tendría una entrada` config` similar a la siguiente:
 
 ```
 Host repo.example.com
   IdentityFile ~/.ssh/my_private_key
 ```
 
-Or you could just drop the key in `id_rsa` and `id_rsa.pub` files and it should
-work by default without the need of adding a `config` file.
+O simplemente puede soltar la clave en los archivos `id_rsa` y` id_rsa.pub` 
+y debería trabajar por defecto sin la necesidad de agregar un archivo `config`.
 
-Host key checking is enabled by default, which means that you also need to
-provide a `known_hosts` file for any repos that you wish to access via SSH.
+La verificación de la clave del host está habilitada de forma predeterminada, 
+lo que significa que también debe proporcione un archivo `known_hosts` 
+para cualquier repositorio al que desee acceder a través de SSH.
 
-In order to disable host key checks for a repo, your config would look something
-like this:
+Para deshabilitar las comprobaciones de clave de host para un repositorio, 
+su configuración se vería algo como esto:
 
 ```
 Host repo.example.com
